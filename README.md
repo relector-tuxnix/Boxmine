@@ -7,7 +7,7 @@ A comprehensive diagram tool for HTML5 web browsers.
 Features:
 <ul>
   <li>Connect objects.</li>
-  <li>Change connection arrows shapes.</li>
+  <li>Change the shape of connection arrows.</li>
   <li>Add points to connecting lines to change their shape and flow.</li>
   <li>Insert external images.</li>
   <li>Insert pre-built objects.</li>
