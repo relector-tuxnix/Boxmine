@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf8"/>
+
+        <title>Boxmine</title>
+
+        <link rel="stylesheet" type="text/css" href="./assets/libs/jointjs/joint.css" />
+		
+		<link rel="stylesheet" href="./assets/libs/jquery-ui/themes/base/jquery.ui.all.css">
+		 
+		<script type="text/javascript" src="./assets/libs/jquery/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="./assets/libs/jointjs/joint.js"></script>
+		<script type="text/javascript" src="./assets/libs/jointjs/plugins/joint.shapes.basic.js"></script>
+	
+		<script type="text/javascript" src="./assets/scripts/grapher.js"></script>
+		
+		
+        <style type="text/css">
+		
+			html {
+				overflow-y: scroll;
+				font:75% 'Lucida Sans Unicode','Lucida Grande',arial,helvetica,sans-serif;
+			}
+			
+			#wrapper {
+				margin: 0 auto;
+			}
+			
+			#paper_container {
+				 border: 1px solid black;
+				 background: #CACACA;
+				 max-height: 700px;
+				 overflow: scroll;
+				 padding: 10px;
+			}
+			
+            #paper {
+				background: #FFFFFF;
+                border: 1px solid gray;
+				margin: 0px auto;
+            }
+				
+			.menu {
+				display: block;
+				border: 1px solid black;
+				height: 32px;
+				padding: 5px 10px;
+			}
+			
+				.menu li {
+					display: inline;
+					float: left;
+				}
+					.menu li:hover {
+						opacity: 0.5;
+					}
+					
+					.menu li span {
+						left: -60px;
+						position: relative;
+						top: 40px;
+						width: 120px;
+						text-align: center;
+						border: 1px solid black;
+						background: white;
+						padding: 0 10px;
+						display: none;
+						background-color: rgba(255, 255, 255, 1);
+					}
+				
+			.menu_item {
+				width: 32px;
+				height: 32px;
+				padding-left: 5px;
+			}
+			
+			.menu_spacer {
+				background: black;
+				margin: 0px 10px;
+				width: 1px;
+				height: 32px;
+				overflow: hidden;
+			}
+		
+			#cut {
+			   background:url('./assets/images/icons/32x32/actions/edit-cut.png') no-repeat no-repeat;
+			}
+			
+			#copy {
+			   background:url('./assets/images/icons/32x32/actions/edit-copy.png') no-repeat no-repeat;
+			}
+			
+			#paste {
+			   background:url('./assets/images/icons/32x32/actions/edit-paste.png') no-repeat no-repeat;
+			}
+			
+			#delete {
+			   background:url('./assets/images/icons/32x32/actions/edit-delete.png') no-repeat no-repeat;
+			}
+			
+			#undo {
+			   background:url('./assets/images/icons/32x32/actions/edit-undo.png') no-repeat no-repeat;
+			}
+			
+			#redo {
+			   background:url('./assets/images/icons/32x32/actions/edit-redo.png') no-repeat no-repeat;
+			}
+			
+			#zoom_in {
+			   background:url('./assets/images/icons/32x32/actions/zoom-in.png') no-repeat no-repeat;
+			}
+			
+			#zoom_out {
+			   background:url('./assets/images/icons/32x32/actions/zoom-out.png') no-repeat no-repeat;
+			}
+			
+			#zoom_reset {
+			   background:url('./assets/images/icons/32x32/actions/zoom-original.png') no-repeat no-repeat;
+			}
+			
+			#group {
+			   background:url('./assets/images/icons/32x32/actions/group.png') no-repeat no-repeat;
+			}
+			
+			#ungroup {
+			   background:url('./assets/images/icons/32x32/actions/ungroup.png') no-repeat no-repeat;
+			}
+			
+			#select_all {
+			   background:url('./assets/images/icons/32x32/actions/edit-select-all.png') no-repeat no-repeat;
+			}
+			
+			#save_document {
+			   background:url('./assets/images/icons/32x32/actions/document-save.png') no-repeat no-repeat;
+			}
+			
+			#export_document {
+			   background:url('./assets/images/icons/32x32/actions/document-save-as.png') no-repeat no-repeat;
+			}
+			
+			#new_document {
+			   background:url('./assets/images/icons/32x32/actions/window-new.png') no-repeat no-repeat;
+			}
+			
+			#open_document {
+			   background:url('./assets/images/icons/32x32/actions/document-open.png') no-repeat no-repeat;
+			}
+				
+			#toggle_grid {
+			   background:url('./assets/images/icons/32x32/actions/view-calendar-month.png') no-repeat no-repeat;
+			}
+			
+			#object_attributes {
+			   background:url('./assets/images/icons/32x32/actions/system-run.png') no-repeat no-repeat;
+			}
+			
+			#insert_image {
+			   background:url('./assets/images/icons/32x32/actions/insert-image.png') no-repeat no-repeat;
+			}
+			
+			#insert_object {
+			   background:url('./assets/images/icons/32x32/actions/insert-object.png') no-repeat no-repeat;
+			}
+			
+			#insert_text {
+			   background:url('./assets/images/icons/32x32/actions/insert-text.png') no-repeat no-repeat;
+			}
+			
+			#move_up {
+			   background:url('./assets/images/icons/32x32/actions/go-up.png') no-repeat no-repeat;
+			}
+			
+			#move_down {
+			   background:url('./assets/images/icons/32x32/actions/go-down.png') no-repeat no-repeat;
+			}
+			
+			#move_top{
+			   background:url('./assets/images/icons/32x32/actions/go-top.png') no-repeat no-repeat;
+			}
+			
+			#move_bottom {
+			   background:url('./assets/images/icons/32x32/actions/go-bottom.png') no-repeat no-repeat;
+			}
+
+        </style>
+    </head>
+	
+    <body>
+
+		<div id="wrapper">
+			
+			<ul class="menu">
+				<li id="new_document" class="menu_item"><span>New Document<span></li>
+				<li id="open_document" class="menu_item"><span>Open Document<span></li>
+				<li id="save_document" class="menu_item"><span>Save Document<span></li>
+				<li id="export_document" class="menu_item"><span>Export Document<span></li>
+				
+				<li class="menu_spacer"></li>
+				
+				<li id="undo" class="menu_item"><span>Undo</span></li>
+				<li id="redo" class="menu_item"><span>Redo</span></li>
+				<li id="cut" class="menu_item"><span>Cut</span></li>
+				<li id="copy" class="menu_item"><span>Copy</span></li>
+				<li id="paste" class="menu_item"><span>Paste</span></li>
+				<li id="delete" class="menu_item"><span>Delete</span></li>
+				<li id="select_all" class="menu_item"><span>Select All<span></li>
+				
+				<li class="menu_spacer"></li>
+				
+				<li id="zoom_in" class="menu_item"><span>Zoom In</span></li>
+				<li id="zoom_reset" class="menu_item"><span>Zoom Reset</span></li>
+				<li id="zoom_out" class="menu_item"><span>Zoom Out</span></li>
+				
+				<li class="menu_spacer"></li>
+				
+				<li id="group" class="menu_item"><span>Group</span></li>
+				<li id="ungroup" class="menu_item"><span>Ungroup<span></li>
+				<li id="move_up" class="menu_item"><span>Move Up</span></li>
+				<li id="move_down" class="menu_item"><span>Move Down<span></li>
+				<li id="move_top" class="menu_item"><span>Move Top</span></li>
+				<li id="move_bottom" class="menu_item"><span>Move Bottom<span></li>
+				
+				<li class="menu_spacer"></li>
+				
+				<li id="toggle_grid" class="menu_item"><span>Toggle Grid<span></li>
+				
+				<li class="menu_spacer"></li>
+				
+				<li id="object_attributes" class="menu_item"><span>Object Attributes<span></li>
+				<li id="insert_image" class="menu_item"><span>Insert Image<span></li>
+				<li id="insert_object" class="menu_item"><span>Insert Object<span></li>
+				<li id="insert_text" class="menu_item"><span>Insert Text<span></li>
+			</ul>
+			
+			<div id="paper_container" class="ui-widget-content">
+				<div id="paper"></div>
+			</div>
+			
+		</div>
+    </body>
+</html>
