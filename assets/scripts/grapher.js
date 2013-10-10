@@ -1,26 +1,5 @@
 $(document).ready(function() {
-		
-	<!-- Display help text for menu items after a short delay -->
-	(function() {
-		var timer;
-		var item;
-		
-		$(".menu_item").hover(function(){
-		
-			item = this.id;
-
-			timer = setTimeout(function() {
-				$("#" + item + " span").css("display", "block");
-			}, 1000);
-			
-		  },function(){
-		  
-			clearTimeout(timer);
-			
-			$("#" + item + " span").css("display", "none");
-		}); 
-	})();
-		
+	
 	(function() {
 		$("#paper").width("1000");
 		$("#paper").height("1000");
@@ -53,9 +32,6 @@ $(document).ready(function() {
 	});
 	
 	graph.addCell(r1);
-	
-
-
 	
 	$('#perpendicularLinks').on('change', function() {
 		paper.options.perpendicularLinks = $(this).is(':checked') ? true : false;
