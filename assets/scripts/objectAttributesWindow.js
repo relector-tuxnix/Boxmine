@@ -1,28 +1,34 @@
 $(document).ready(function() {
 
-	$("#object_attributes_window").load("objectAttributesWindow.html", function() {
+	$("#object_attributes_window").load("./objectAttributesWindow.html", function() {
 	
-		var window = $("#object_attributes_window");
+		console.log("Loaded Object Attributes Window.");
+		
+		var windowFrame = $("#object_attributes_window");
+		
+		//var navigationButton = $("#object_attributes");
+		
 		var opacitySlider = $("#opacity");
 		var fillStartColour = $("#fill_start_colour");
-		var newDocument = $("#object_attributes");
 		var okButton = $("#oaw_ok_button");
 		var cancelButton = $("#oaw_cancel_button");
 
-		newDocument.bind("click", function() {
-			window.data("kendoWindow").open();
+		/*
+		navigationButton.bind("click", function() {
+			windowFrame.data("kendowindowFrame").open();
 		});
+		*/
 		
 		okButton.bind("click", function() {
-			window.data("kendoWindow").close();
+			windowFrame.data("kendoWindow").close();
 		});
 		
 		cancelButton.bind("click", function() {
-			window.data("kendoWindow").close();
+			windowFrame.data("kendoWindow").close();
 		});
 		
-		if(window.data("kendoWindow") == undefined) {
-			window.kendoWindow({
+		if(windowFrame.data("kendoWindow") == undefined) {
+			windowFrame.kendoWindow({
 				width: "600px",
 				title: "Object Attributes",
 				actions: []
@@ -52,10 +58,9 @@ $(document).ready(function() {
 				value: "#ffffff",
 				buttons: false
 			});
-
 			
-			window.data("kendoWindow").close();
-			window.data("kendoWindow").center();
+			windowFrame.data("kendoWindow").close();
+			windowFrame.data("kendoWindow").center();
 		}		
 	});	
 });

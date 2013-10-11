@@ -8,24 +8,41 @@
         <title>Boxmine</title>
 
 		<link rel="stylesheet" type="text/css" href="./assets/libs/jointjs/joint.css" />
-		<link rel="stylesheet" type="text/css" href="./assets/styles/global.css" />
-		
 		<link rel="stylesheet" type="text/css" href="./assets/libs/kendoui/styles/kendo.common.min.css">
 		<link rel="stylesheet" type="text/css" href="./assets/libs/kendoui/styles/kendo.default.min.css">
 		
+		<link rel="stylesheet" type="text/css" href="./assets/styles/global.css" />
+			
 		<script type="text/javascript" src="./assets/libs/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/libs/jointjs/joint.js"></script>
 		<script type="text/javascript" src="./assets/libs/jointjs/plugins/joint.shapes.basic.js"></script>
 		<script type="text/javascript" src="./assets/libs/kendoui/js/kendo.web.min.js"></script>
 		
-		<script type="text/javascript" src="./assets/scripts/objectAttributesWindow.js"></script>
 		<script type="text/javascript" src="./assets/scripts/grapher.js"></script>
+		
+		<script type="text/javascript" src="./assets/scripts/openDocumentWindow.js"></script>
+		<script type="text/javascript" src="./assets/scripts/saveDocumentWindow.js"></script>
+		<script type="text/javascript" src="./assets/scripts/exportDocumentWindow.js"></script>
+		<script type="text/javascript" src="./assets/scripts/objectAttributesWindow.js"></script>
+		<script type="text/javascript" src="./assets/scripts/textAttributesWindow.js"></script>
+		<script type="text/javascript" src="./assets/scripts/insertObjectWindow.js"></script>
+		<script type="text/javascript" src="./assets/scripts/insertImageWindow.js"></script>
+		
     </head>
 	
     <body>
 
+		<div id="open_document_window"></div>
+		<div id="save_document_window"></div>
+		<div id="export_document_window"></div>
+		
 		<div id="object_attributes_window"></div>
-			
+		<div id="text_attributes_window"></div>
+		
+		<div id="insert_object_window"></div>
+		<div id="insert_image_window"></div>
+		
+		
 		<div id="wrapper">
 			
 			<div id="navigation">
@@ -67,10 +84,9 @@
 				<div class="menu_spacer"></div>
 				
 				<div id="object_attributes" class="menu_item"><span>Object Attributes</span></div>
-				<div id="insert_image" class="menu_item"><span>Insert Image</span></div>
 				<div id="insert_object" class="menu_item"><span>Insert Object</span></div>
-				<div id="insert_text" class="menu_item"><span>Insert Text</span></div>
-			
+				<div id="insert_image" class="menu_item"><span>Insert Image</span></div>
+
 			</div>
 				
 			<div id="paper_container">
