@@ -20,6 +20,8 @@ Dependencies:
   <li>JQuery : A fast, small, and feature-rich JavaScript library.</li>
   <li>JointJS : An open source JavaScript library for creating diagrams.</li>
   <li>KendoUI Web : Provides polished and innovative UI widgets for the web.</li>
+  <li>Tango Icon Library : A basic set of desktop icons.</li>
+  <li>Cheser Icon Theme : A mix of different Tango-style icons.</li>
 </ul>
 
 Existing Solutions:
@@ -27,5 +29,6 @@ Existing Solutions:
   <li><a href="https://www.draw.io/">Draw.io (Paid)</a></li>
   <li><a href="https://www.gliffy.com">Gliffy (Paid)</a></li>
   <li><a href="http://figurepool.com/">FigurePool (Paid)</a></li>
+  <li><a href="http://www.jointjs.com/rappid/">Rappid (Demo)</a></li>
   <li><a href="https://github.com/alexgheorghiu/diagramo">Diagramo (Free)</a></li>
 </ul>
