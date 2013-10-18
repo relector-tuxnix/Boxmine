@@ -1,30 +1,20 @@
 $(document).ready(function() {
 
-	$("#open_document_window").load("./openDocumentWindow.html", function() {
-		console.log("Loaded Open Document Window.");
+	$("#image_attributes_window").load("./imageAttributesWindow.html", function() {
+		console.log("Loaded Image Attributes Window.");
 		
-		var windowFrame = $("#open_document_window");
-		
-		var navigationButton = $("#open_document");
-		
+		var windowFrame = $("#image_attributes_window");
+
 		var opacitySlider = $("#opacity");
 		var fillStartColour = $("#fill_start_colour");
-		var okButton = $("#odw_ok_button");
-		var cancelButton = $("#odw_cancel_button");
-
-		navigationButton.bind("click", function() {
-			
-			if(window.boxmine.activeWindow != null) {
-				return;
-			}
-
-			window.boxmine.activeWindow = windowFrame;
-			windowFrame.data("kendoWindow").open();
-		});
+		var okButton = $("#iaw_ok_button");
+		var cancelButton = $("#iaw_cancel_button");
 		
 		okButton.bind("click", function() {
 			window.boxmine.activeWindow = null;
 			windowFrame.data("kendoWindow").close();
+			
+			window.boxmine.deselectAll();
 		});
 		
 		cancelButton.bind("click", function() {
@@ -35,7 +25,7 @@ $(document).ready(function() {
 		if(windowFrame.data("kendoWindow") == undefined) {
 			windowFrame.kendoWindow({
 				width: "600px",
-				title: "Open Document",
+				title: "Image Attributes",
 				actions: []
 			});
 			

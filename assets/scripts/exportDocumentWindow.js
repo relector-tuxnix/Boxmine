@@ -12,14 +12,22 @@ $(document).ready(function() {
 		var cancelButton = $("#edw_cancel_button");
 
 		navigationButton.bind("click", function() {
+		
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+
+			window.boxmine.activeWindow = windowFrame;
 			windowFrame.data("kendoWindow").open();
 		});
 		
 		okButton.bind("click", function() {
+			window.boxmine.activeWindow = null;
 			windowFrame.data("kendoWindow").close();
 		});
 		
 		cancelButton.bind("click", function() {
+			window.boxmine.activeWindow = null;
 			windowFrame.data("kendoWindow").close();
 		});
 		

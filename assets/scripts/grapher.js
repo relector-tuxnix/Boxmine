@@ -1,6 +1,44 @@
 $(document).ready(function() {
 	
+	joint.shapes.basic.Blob = joint.shapes.basic.Generic.extend({
+
+		markup: [
+        '<svg xmlns="http://www.w3.org/2000/svg">',
+			'<g class="rotatable">',
+				'<g class="scalable">',
+					'<circle cx="233" cy="233" fill="#000" r="231" class="class-ying"/>',
+					'<path d="M 233,459 a 226 226 0 0 1 0,-452 a 113 113 0 0 1 0,226 z" fill="#fff" class="class-yang"/>',
+					'<circle cx="233" cy="346" r="113" fill="#000" class="class-ying"/>',
+					'<circle cx="233" cy="120" fill="#000" r="30" class="class-ying"/>',
+					'<circle cx="233" cy="346" r="30" fill="#fff" class="class-yang"/>',
+				'</g>',
+			'</g>',
+		'</svg>',
+		].join(''),
+		
+		defaults: joint.util.deepSupplement({
+		
+			type: 'basic.Boxmine',
+			
+			attrs: {
+				'.class-ying': { 'fill': '#3498db' },
+				'.class-yang': { 'fill': '#000' }
+			}
+			
+		}, joint.shapes.basic.Generic.prototype.defaults)
+	});
+	
+	
 	window.boxmine = {};
+	window.boxmine.selected = Array();
+	window.boxmine.activeWindow = null;
+	
+	window.boxmine.deselectAll = function() {
+		
+		while(window.boxmine.selected.length > 0) {
+			window.boxmine.selected.pop().unhighlight();
+		}
+	};
 	
 	(function() {
 		$("#paper").width("1000");
@@ -20,30 +58,61 @@ $(document).ready(function() {
 		model: window.boxmine.graph
 	});
 	
-	var rect = new joint.shapes.basic.Rect({
+	var rect = new joint.shapes.basic.Blob({
 		position: { x: 100, y: 30 },
-		size: { width: 100, height: 30 },
-		attrs: { rect: { fill: 'blue' }, text: { text: 'my box', fill: 'white' } }
+		size: { width: 200, height: 200 },
+		attrs: {
+			'.class-ying': { fill: 'black' },
+			'.class-yang': { fill: 'white' }
+		}
 	});
+	
+	console.log(rect.markup);
 	
 	window.boxmine.graph.addCell(rect);
 	
-	rect.rotate(30);
 	
-	console.log(rect);
+	var text = new joint.shapes.basic.Text({
+		position: { x: 170, y: 50 },
+		size: { width: 40, height: 30 },
+		attrs: { text: { text: 'Text' } }
+	});
+	
+	window.boxmine.graph.addCell(text);
+	
+	/* For ZOOM need to increase/decrease paper size aswell...not being done atm */
 	
 	$("#zoom_in").bind("click", function() {
-		window.boxmine.paper.scale(1.1);
+		window.boxmine.paper.options.width += 50;
+		window.boxmine.paper.options.height += 50;
+		
+		window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+		
+		$("#paper").width(window.boxmine.paper.options.width);
+		$("#paper").height(window.boxmine.paper.options.width);
 	});
 	
 	$("#zoom_reset").bind("click", function() {
-		window.boxmine.paper.scale(1);
+	
+		window.boxmine.paper.options.width = 1000;
+		window.boxmine.paper.options.height = 1000;
+		
+		window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+		
+		$("#paper").width(window.boxmine.paper.options.width);
+		$("#paper").height(window.boxmine.paper.options.width);
 	});
 	
-	$("#zoom_in").bind("click", function() {
-		window.boxmine.paper.scale(0.9);
+	$("#zoom_out").bind("click", function() {
+		
+		window.boxmine.paper.options.width -= 50;
+		window.boxmine.paper.options.height -= 50;
+		
+		window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+		
+		$("#paper").width(window.boxmine.paper.options.width);
+		$("#paper").height(window.boxmine.paper.options.width);
 	});
-
 	
 	//window.boxmine.graph.on('all', function(eventName, cell)
 	//{
@@ -58,13 +127,17 @@ $(document).ready(function() {
 	window.boxmine.paper.on('blank:pointerdown', function(evt, x, y) {
 	
 		console.log("pointerdown on " + x + "," + y);
+
+		window.boxmine.deselectAll();
 	});
 
 	window.boxmine.paper.on('cell:pointerdown', function(v, evt, x, y) {
 	
 		console.log("mousedown on " + x + "," + y);
 		
-		console.log(v.model.rotate(90));
+		v.highlight();
+		
+		window.boxmine.selected.push(v);
 	});
 
 	window.boxmine.paper.on('cell:pointerup', function(v, evt, x, y) {
@@ -76,5 +149,38 @@ $(document).ready(function() {
 	
 		console.log("mousemove on " + x + "," + y);
 	});
+	
+	$("#attributes").bind("click", function() {
+		
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			if(window.boxmine.selected.length == 1) {
+				
+				var type = window.boxmine.selected[0].model.defaults.type;
+				
+				console.log(type);
+				
+				if(type == "basic.Rect") {
+					
+					window.boxmine.activeWindow = $("#object_attributes_window");
+					
+					window.boxmine.activeWindow.data("kendoWindow").open();
+					
+				} else if(type == "basic.Image") {
+				
+					window.boxmine.activeWindow = $("#image_attributes_window");
+					
+					window.boxmine.activeWindow.data("kendoWindow").open();
+				
+				} else if(type =="basic.Text") {
+				
+					window.boxmine.activeWindow = $("#text_attributes_window");
+					
+					window.boxmine.activeWindow.data("kendoWindow").open();
+				}
+			}
+		});
 	
 });

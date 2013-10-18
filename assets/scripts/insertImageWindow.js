@@ -12,6 +12,12 @@ $(document).ready(function() {
 		var cancelButton = $("#iiw_cancel_button");
 
 		navigationButton.bind("click", function() {
+		
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+
+			window.boxmine.activeWindow = windowFrame;
 			windowFrame.data("kendoWindow").open();
 		});
 		
@@ -28,10 +34,12 @@ $(document).ready(function() {
 			
 			window.boxmine.graph.addCell(ib);
 		
+			window.boxmine.activeWindow = null;
 			windowFrame.data("kendoWindow").close();
 		});
 		
 		cancelButton.bind("click", function() {
+			window.boxmine.activeWindow = null;
 			windowFrame.data("kendoWindow").close();
 		});
 		

@@ -6,24 +6,20 @@ $(document).ready(function() {
 		
 		var windowFrame = $("#object_attributes_window");
 		
-		//var navigationButton = $("#object_attributes");
-		
 		var opacitySlider = $("#opacity");
 		var fillStartColour = $("#fill_start_colour");
 		var okButton = $("#oaw_ok_button");
 		var cancelButton = $("#oaw_cancel_button");
 
-		/*
-		navigationButton.bind("click", function() {
-			windowFrame.data("kendowindowFrame").open();
-		});
-		*/
-		
 		okButton.bind("click", function() {
+			window.boxmine.activeWindow = null;
 			windowFrame.data("kendoWindow").close();
+			
+			window.boxmine.deselectAll();	
 		});
 		
 		cancelButton.bind("click", function() {
+			window.boxmine.activeWindow = null;
 			windowFrame.data("kendoWindow").close();
 		});
 		
