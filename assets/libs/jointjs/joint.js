@@ -4809,11 +4809,11 @@ joint.dia.Cell = Backbone.Model.extend({
 
     remove: function(options) {
 
-	var collection = this.collection;
+		var collection = this.collection;
 
-	if (collection) {
-	    collection.trigger('batch:start');
-	}
+		if (collection) {
+			collection.trigger('batch:start');
+		}
 
         // First, unembed this cell from its parent cell if there is one.
         var parentCellId = this.get('parent');
@@ -4827,9 +4827,9 @@ joint.dia.Cell = Backbone.Model.extend({
         
         this.trigger('remove', this, this.collection, options);
 
-	if (collection) {
-	    collection.trigger('batch:stop');
-	}
+		if (collection) {
+			collection.trigger('batch:stop');
+		}
     },
 
     toFront: function() {
@@ -4839,7 +4839,7 @@ joint.dia.Cell = Backbone.Model.extend({
             this.set('z', (this.collection.last().get('z') || 0) + 1);
         }
     },
-    
+   
     toBack: function() {
 
         if (this.collection) {
@@ -4847,29 +4847,80 @@ joint.dia.Cell = Backbone.Model.extend({
             this.set('z', (this.collection.first().get('z') || 0) - 1);
         }
     },
+	
+	/* Boxmine Custom Function */
+	moveUp: function() {
+
+        if (this.collection) {
+
+			_.sortBy(this.collection, this.get);
+		
+			var closest;
+			var toMove = this;
+
+			_.each(this.collection.models, function(obj, idx) {
+
+				if(obj.id != toMove.id) {
+					
+					if(obj.get('z') > toMove.get('z')) {
+					
+						if(closest == null) {
+							closest = obj;
+						} else if(obj.get('z') < closest) {
+							closest = obj;
+						}
+					}
+				}
+			});
+			
+			console.log(closest);
+			
+            //this.set('z', this.collection.last().get('z') + 1);
+			
+			//console.log(this.get('z'));
+        }
+    },
+    
+	/* Boxmine Custom Function */
+    moveDown: function() {
+
+        if (this.collection) {
+            
+            this.set('z', this.get('z') - 1);
+			
+			console.log(this.get('z'));
+        }
+    },
 
     embed: function(cell) {
 
-	this.trigger('batch:start');
+        if(this.get('parent') == cell.id) {
+            
+            throw new Error('Recursive embedding not allowed.');
+			
+        } else {
+		
+			this.trigger('batch:start');
 
-        var cellId = cell.id;
-        cell.set('parent', this.id);
+			cell.set('parent', this.id);
 
-        this.set('embeds', _.uniq((this.get('embeds') || []).concat([cellId])));
+			this.set('embeds', _.uniq((this.get('embeds') || []).concat([cell.id])));
 
-	this.trigger('batch:stop');
+			this.trigger('batch:stop');
+		}
     },
 
     unembed: function(cell) {
 
-	this.trigger('batch:start');
+		this.trigger('batch:start');
 
         var cellId = cell.id;
+		
         cell.unset('parent');
 
         this.set('embeds', _.without(this.get('embeds'), cellId));
 
-	this.trigger('batch:stop');
+		this.trigger('batch:stop');
     },
 
     getEmbeddedCells: function() {
