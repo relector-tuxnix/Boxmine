@@ -31,4 +31,6 @@ Existing Solutions:
   <li><a href="http://figurepool.com/">FigurePool (Paid)</a></li>
   <li><a href="http://www.jointjs.com/rappid/">Rappid (Demo)</a></li>
   <li><a href="https://github.com/alexgheorghiu/diagramo">Diagramo (Free)</a></li>
+  <li><a href="https://moqups.com/">Moqups</a></li>
+
 </ul>
