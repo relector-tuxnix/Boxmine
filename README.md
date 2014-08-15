@@ -17,13 +17,13 @@ Features:
 
 Dependencies:
 <ul>
-  <li>JQuery : A fast, small, and feature-rich JavaScript library.</li>
-  <li>JointJS : An open source JavaScript library for creating diagrams.</li>
-  <li>Node.js  : A platform built on Chrome's JavaScript runtime.</li>
-  <li>Partial.js : Framework for building Web applications using JavaScript.</li>
+  <li><a href="http://jquery.com/">JQuery</a> : A fast, small, and feature-rich JavaScript library.</li>
+  <li><a href="http://www.jointjs.com/">JointJS</a> : An open source JavaScript library for creating diagrams.</li>
+  <li><a href="http://nodejs.org/">Node.js</a> : A platform built on Chrome's JavaScript runtime.</li>
+  <li><a href="http://www.partialjs.com/">Partial.js</a> : Framework for building Web applications using JavaScript.</li>
   <li><a href="http://components.onsenui.io/">Onsen UI</a>: An elements-based HTML5 UI Framework.</li>
-  <li>Tango Icon Library : A basic set of desktop icons.</li>
-  <li>Cheser Icon Theme : A mix of different Tango-style icons.</li>
+  <li><a href="http://tango.freedesktop.org/Tango_Icon_Library">Tango Icon Library</a> : A basic set of desktop icons.</li>
+  <li><a href="http://gnome-look.org/content/show.php/Cheser+Icons?content=113386">Cheser Icon Theme</a> : A mix of different Tango-style icons.</li>
 </ul>
 
 Existing Solutions:
