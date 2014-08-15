@@ -19,7 +19,9 @@ Dependencies:
 <ul>
   <li>JQuery : A fast, small, and feature-rich JavaScript library.</li>
   <li>JointJS : An open source JavaScript library for creating diagrams.</li>
-  <li>KendoUI Web : Provides polished and innovative UI widgets for the web.</li>
+  <li>Node.js  : A platform built on Chrome's JavaScript runtime.</li>
+  <li>Partial.js : Framework for building Web applications using JavaScript.</li>
+  <li><a href="http://components.onsenui.io/">Onsen UI</a>: An elements-based HTML5 UI Framework.</li>
   <li>Tango Icon Library : A basic set of desktop icons.</li>
   <li>Cheser Icon Theme : A mix of different Tango-style icons.</li>
 </ul>
@@ -32,5 +34,4 @@ Existing Solutions:
   <li><a href="http://www.jointjs.com/rappid/">Rappid (Demo)</a></li>
   <li><a href="https://github.com/alexgheorghiu/diagramo">Diagramo (Free)</a></li>
   <li><a href="https://moqups.com/">Moqups</a></li>
-
 </ul>
