@@ -56,24 +56,16 @@ Visit in a modern web browser:
 ## Development
 
 ### Requirements
-
 * [Elastic-Core](https://github.com/neonnds/Elastic-Core)
-
 * [CUID](https://github.com/ericelliott/cuid)
 
 ### Other Dependencies
 * [JQuery](http://jquery.com/) - A fast, small, and feature-rich JavaScript library.
-
 * [JointJS](http://www.jointjs.com/) - An open source JavaScript library for creating diagrams.
-
 * [Node.js](http://nodejs.org/) - A platform built on Chrome's JavaScript runtime.
-
 * [Total.js](http://www.totaljs.com/) - Framework for building Web applications using JavaScript.
-
 * [Pure.css](https://github.com/yahoo/pure/) - A set of small, responsive CSS modules.
-
 * [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) - A basic set of desktop icons.
-
 * [Cheser Icon Theme](http://gnome-look.org/content/show.php/Cheser+Icons?content=113386) - A mix of different Tango-style icons.
 
 ### Linux Installation
@@ -107,11 +99,9 @@ Start Boxmine
     $> ./run Boxmine
 
 ### Existing Solutions
-<ul>
-  <li><a href="https://www.draw.io/">Draw.io (Paid)</a></li>
-  <li><a href="https://www.gliffy.com">Gliffy (Paid)</a></li>
-  <li><a href="http://figurepool.com/">FigurePool (Paid)</a></li>
-  <li><a href="http://www.jointjs.com/rappid/">Rappid (Demo)</a></li>
-  <li><a href="https://github.com/alexgheorghiu/diagramo">Diagramo (Free)</a></li>
-  <li><a href="https://moqups.com/">Moqups (Paid)</a></li>
-</ul>
+* [Draw.io (Paid)](https://www.draw.io/)
+* [Gliffy (Paid)](https://www.gliffy.com)
+* [FigurePool (Paid)](http://figurepool.com)
+* [Rappid (Demo)](http://www.jointjs.com/rappid)
+* [Diagramo (Free)](https://github.com/alexgheorghiu/diagramo)
+* [Moqups (Paid)](https://moqups.com/)
