@@ -1,0 +1,28 @@
+name                       	: Boxmine (DEBUG)
+version                    	: 1.00
+secret                    	: elastic-blog-1.00
+default-ip     			: 127.0.0.1
+default-port     		: 8000
+etag-version               	:
+directory-contents		: /assets/
+directory-controllers		: /controllers/
+directory-views            	: /assets/views/
+directory-locale		: /assets/locale/
+directory-temp                  : /tmp/
+directory-resources             : /assets/resources/
+directory-public             	: /assets/static/
+directory-modules             	: /modules/
+directory-logs                  : /logs/
+static-url                      :
+static-url-js                   : /scripts/
+static-url-css                  : /styles/
+static-url-image             	: /images/
+static-url-video             	: /videos/
+static-url-font                 : /fonts/
+static-url-document             : /uploads/
+static-accepts-custom           : .tar, .gz, .exe, .jpeg, .jpg, .gif, .png
+default-layout                 	: default
+default-request-length     	: 5120 
+default-language 		: boxmine/en-US
+default-item-limit 		: 50
+max-file-size			: 104857600
