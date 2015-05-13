@@ -3,7 +3,6 @@ Boxmine
 
 A comprehensive diagram tool for HTML5 web browsers. 
 
-
 Features:
 <ul>
   <li>Connect objects.</li>
@@ -15,18 +14,93 @@ Features:
   <li>Load saved diagrams from filesystem and website.</li>
 </ul>
 
-Dependencies:
-<ul>
-  <li><a href="http://jquery.com/">JQuery</a> : A fast, small, and feature-rich JavaScript library.</li>
-  <li><a href="http://www.jointjs.com/">JointJS</a> : An open source JavaScript library for creating diagrams.</li>
-  <li><a href="http://nodejs.org/">Node.js</a> : A platform built on Chrome's JavaScript runtime.</li>
-  <li><a href="http://www.partialjs.com/">Partial.js</a> : Framework for building Web applications using JavaScript.</li>
-  <li><a href="http://components.onsenui.io/">Onsen UI</a>: An elements-based HTML5 UI Framework.</li>
-  <li><a href="http://tango.freedesktop.org/Tango_Icon_Library">Tango Icon Library</a> : A basic set of desktop icons.</li>
-  <li><a href="http://gnome-look.org/content/show.php/Cheser+Icons?content=113386">Cheser Icon Theme</a> : A mix of different Tango-style icons.</li>
-</ul>
+## Releases
 
-Existing Solutions:
+* [Version 2015.05](https://github.com/neonnds/Boxmine/raw/master/boxmine-2015-05.tar.gz)
+
+## Getting Started
+
+Get Boxmine
+
+    $> wget https://github.com/neonnds/Boxmine/raw/master/boxmine-2015-05.tar.gz
+    
+Extract Boxmine
+
+    $> tar -zxf boxmine-2015-05.tar.gz
+    
+Enter the Boxmine project
+
+    $> cd ./boxmine-2015-05
+
+Get Boxmine from the offical site
+
+    $> wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.5.0.tar.gz
+    
+Extract ElasticSearch
+
+    $> tar -zxf elasticsearch-1.5.0.tar.gz
+    
+Start Elastic Search
+
+    $> ./elasticsearch-1.5.0/bin/elasticsearch
+
+Start Boxmine
+
+    $> nodejs index.js
+    
+Visit in a modern web browser:
+
+    http://127.0.0.1:8000/
+
+
+## Development
+
+### Requirements
+
+* [Elastic-Core](https://github.com/neonnds/Elastic-Core)
+
+* [CUID](https://github.com/ericelliott/cuid)
+
+### Other Dependencies
+* [JQuery](href="http://jquery.com/) - A fast, small, and feature-rich JavaScript library.
+* [JointJS](http://www.jointjs.com/) - An open source JavaScript library for creating diagrams.
+* [Node.js](http://nodejs.org/) - A platform built on Chrome's JavaScript runtime.
+* [Total.js](http://www.totaljs.com/) - Framework for building Web applications using JavaScript.
+* [Onsen UI](http://components.onsenui.io/) - An elements-based HTML5 UI Framework.
+* [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) - A basic set of desktop icons.
+* [Cheser Icon Theme](http://gnome-look.org/content/show.php/Cheser+Icons?content=113386) - A mix of different Tango-style icons.
+
+### Linux Installation
+
+Enter the Elastic-Core project sites directory
+
+    $> cd ./Elastic-Core/sites
+
+Get the Boxmine project
+
+    $> git clone https://github.com/neonnds/Boxmine.git
+
+Enter the Boxmine project
+
+    $> cd ./Boxmine
+
+Install the following node modules
+
+    $> npm install cuid --save
+
+Enter the Elastic-Core project
+
+    $> cd ./Elastic-Core
+
+Start Elastic Search
+
+    $> ./elasticsearch-1.5.0/bin/elasticsearch
+
+Start Boxmine
+
+    $> ./run Boxmine
+
+### Existing Solutions
 <ul>
   <li><a href="https://www.draw.io/">Draw.io (Paid)</a></li>
   <li><a href="https://www.gliffy.com">Gliffy (Paid)</a></li>
