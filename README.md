@@ -62,6 +62,7 @@ Visit in a modern web browser:
 ### Other Dependencies
 * [JQuery](http://jquery.com/) - A fast, small, and feature-rich JavaScript library.
 * [JointJS](http://www.jointjs.com/) - An open source JavaScript library for creating diagrams.
+* [svg.import.js](https://github.com/wout/svg.import.js) - A plugin for importing raw SVG into the svg.js library.
 * [Node.js](http://nodejs.org/) - A platform built on Chrome's JavaScript runtime.
 * [Total.js](http://www.totaljs.com/) - Framework for building Web applications using JavaScript.
 * [Pure.css](https://github.com/yahoo/pure/) - A set of small, responsive CSS modules.
