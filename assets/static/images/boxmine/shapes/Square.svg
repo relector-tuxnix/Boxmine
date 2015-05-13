@@ -1,0 +1,13 @@
+<svg>
+	<g>
+		<g>
+			<rect x="1" y="1" width="27" height="18" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="7"/>
+			<rect x="1" y="1" width="27" height="18" fill="none" stroke="none" pointer-events="all"/>
+		</g>
+		<g>
+			<g font-size="11px">
+				<text x="3" y="12" fill="#000000" font-family="Helvetica">Text</text>
+			</g>
+		</g>
+	</g>
+</svg>
