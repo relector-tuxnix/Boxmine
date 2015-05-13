@@ -10,7 +10,6 @@ $(document).ready(function() {
 		return false;
 	}); 
 			
-/*
 	joint.shapes.basic.Blob = joint.shapes.basic.Generic.extend({
 
 		markup: [
@@ -36,8 +35,6 @@ $(document).ready(function() {
 			
 		}, joint.shapes.basic.Generic.prototype.defaults)
 	});
-*/	
-	
 	
 	window.boxmine = {};
 	window.boxmine.selected = Array();
@@ -125,12 +122,8 @@ $(document).ready(function() {
 	};
 	
 	
-	
-	
-	
-	
 	(function() {
-		$("#paper").width("1000");
+		$("#paper").width("2000");
 		$("#paper").height("1000");
 		
 		$("#paper_container").height($(window).height() - 100);
@@ -140,7 +133,7 @@ $(document).ready(function() {
 
 	window.boxmine.paper = new joint.dia.Paper({
 		el: $('#paper'),
-		width: 1000,
+		width: 2000,
 		height: 1000,
 		gridSize: 1,
 		perpendicularLinks: false,
@@ -155,11 +148,22 @@ $(document).ready(function() {
 			'.class-yang': { fill: 'white' }
 		}
 	});
+
+	var link = new joint.dia.Link({
+		source: { x: 10, y: 20 },
+		target: { x: 350, y: 20 },
+		attrs: {
+			'.connection': { stroke: 'blue' },
+			'.marker-source': { fill: 'red', d: 'M 10 0 L 0 5 L 10 10 z' },
+			'.marker-target': { fill: 'yellow', d: 'M 10 0 L 0 5 L 10 10 z' }
+		}
+	});
+
+	window.boxmine.graph.addCell(link);
 	
 	console.log(rect.markup);
 	
 	window.boxmine.graph.addCell(rect);
-	
 	
 	var text = new joint.shapes.basic.Text({
 		position: { x: 170, y: 50 },

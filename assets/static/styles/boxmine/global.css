@@ -13,18 +13,19 @@ html {
 	border-bottom: 0;
 	height: 32px;
 	padding: 5px 10px;
+	margin-top: 5px;
 }
 
 #paper_container {
-	 border: 1px solid black;
-	 background: #CACACA;
-	 max-height: 700px;
-	 overflow: scroll;
-	 padding: 10px;
+	border: 1px solid black;
+	background: #CACACA;
+	overflow: scroll;
+	display: block;
+	padding: 10px;
 }
 
 	#paper_container .show_grid {
-		background-image: url('../images/grid.gif');
+		background-image: url('/images/boxmine/grid.gif');
 	}
 
 	#paper_container .hide_grid {
@@ -35,14 +36,14 @@ html {
 	background: #FFFFFF;
 	border: 1px solid gray;
 	margin: 0px auto;
-    background-repeat: repeat;
-    background-size: 10px 10px;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    padding: 0;
-    right: 0;
-    top: 0;
+	background-repeat: repeat;
+	background-size: 10px 10px;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	padding: 0;
+	right: 0;
+	top: 0;
 }
 
 	
@@ -89,103 +90,103 @@ html {
 }
 
 #cut {
-   background:url('../images/icons/32x32/actions/edit-cut.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/edit-cut.png') no-repeat no-repeat;
 }
 
 #copy {
-   background:url('../images/icons/32x32/actions/edit-copy.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/edit-copy.png') no-repeat no-repeat;
 }
 
 #paste {
-   background:url('../images/icons/32x32/actions/edit-paste.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/edit-paste.png') no-repeat no-repeat;
 }
 
 #delete {
-   background:url('../images/icons/32x32/actions/edit-delete.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/edit-delete.png') no-repeat no-repeat;
 }
 
 #undo {
-   background:url('../images/icons/32x32/actions/edit-undo.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/edit-undo.png') no-repeat no-repeat;
 }
 
 #redo {
-   background:url('../images/icons/32x32/actions/edit-redo.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/edit-redo.png') no-repeat no-repeat;
 }
 
 #zoom_in {
-   background:url('../images/icons/32x32/actions/zoom-in.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/zoom-in.png') no-repeat no-repeat;
 }
 
 #zoom_out {
-   background:url('../images/icons/32x32/actions/zoom-out.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/zoom-out.png') no-repeat no-repeat;
 }
 
 #zoom_reset {
-   background:url('../images/icons/32x32/actions/zoom-original.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/zoom-original.png') no-repeat no-repeat;
 }
 
 #group {
-   background:url('../images/icons/32x32/actions/group.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/group.png') no-repeat no-repeat;
 }
 
 #ungroup {
-   background:url('../images/icons/32x32/actions/ungroup.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/ungroup.png') no-repeat no-repeat;
 }
 
 #select_all {
-   background:url('../images/icons/32x32/actions/edit-select-all.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/edit-select-all.png') no-repeat no-repeat;
 }
 
 #save_document {
-   background:url('../images/icons/32x32/actions/document-save.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/document-save.png') no-repeat no-repeat;
 }
 
 #export_document {
-   background:url('../images/icons/32x32/actions/document-save-as.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/document-save-as.png') no-repeat no-repeat;
 }
 
 #new_document {
-   background:url('../images/icons/32x32/actions/window-new.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/window-new.png') no-repeat no-repeat;
 }
 
 #open_document {
-   background:url('../images/icons/32x32/actions/document-open.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/document-open.png') no-repeat no-repeat;
 }
 	
 #toggle_grid {
-   background:url('../images/icons/32x32/actions/view-calendar-month.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/view-calendar-month.png') no-repeat no-repeat;
 }
 
 #attributes {
-   background:url('../images/icons/32x32/actions/system-run.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/system-run.png') no-repeat no-repeat;
 }
 
 #insert_image {
-   background:url('../images/icons/32x32/actions/insert-image.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/insert-image.png') no-repeat no-repeat;
 }
 
 #insert_object {
-   background:url('../images/icons/32x32/actions/insert-object.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/insert-object.png') no-repeat no-repeat;
 }
 
 #insert_text {
-   background:url('../images/icons/32x32/actions/insert-text.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/insert-text.png') no-repeat no-repeat;
 }
 
 #move_up {
-   background:url('../images/icons/32x32/actions/go-up.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/go-up.png') no-repeat no-repeat;
 }
 
 #move_down {
-   background:url('../images/icons/32x32/actions/go-down.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/go-down.png') no-repeat no-repeat;
 }
 
 #move_top{
-   background:url('../images/icons/32x32/actions/go-top.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/go-top.png') no-repeat no-repeat;
 }
 
 #move_bottom {
-   background:url('../images/icons/32x32/actions/go-bottom.png') no-repeat no-repeat;
+	background:url('/images/boxmine/icons/32x32/actions/go-bottom.png') no-repeat no-repeat;
 }
 
 .button {
@@ -240,3 +241,38 @@ html {
 .field_element {
 	float: left;
 }
+
+.default-window {
+	display: none;
+}
+
+#tab_strip {
+	border: 0;
+	background: white;
+}
+
+.shape {
+	width: 128px;
+	height: 128px;
+	display: block;
+	border: 1px solid black;
+	margin: 5px;
+	padding: 5px;
+	text-decoration: none;
+}
+
+	.shape img {
+		border: 0;
+		margin: auto;
+		display: block;
+		margin-top: 20px;
+		margin-bottom: 15px;
+	}
+	
+	.shape h4 {
+		text-align: center;
+		text-decoration: none;
+	}
+		.shape h4:visited {
+			text-decoration: none;
+		}

@@ -1,6 +1,6 @@
 name                       	: Boxmine (DEBUG)
 version                    	: 1.00
-secret                    	: elastic-blog-1.00
+secret                    	: boxmine-1.00
 default-ip     			: 127.0.0.1
 default-port     		: 8000
 etag-version               	:
