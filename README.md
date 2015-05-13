@@ -3,7 +3,7 @@ Boxmine
 
 A comprehensive diagram tool for HTML5 web browsers. 
 
-## Features:
+## Features
 <ul>
   <li>Connect objects.</li>
   <li>Change the shape of connection arrows.</li>
