@@ -62,7 +62,7 @@ Visit in a modern web browser:
 * [CUID](https://github.com/ericelliott/cuid)
 
 ### Other Dependencies
-* [JQuery](href="http://jquery.com/) - A fast, small, and feature-rich JavaScript library.
+* [JQuery](http://jquery.com/) - A fast, small, and feature-rich JavaScript library.
 * [JointJS](http://www.jointjs.com/) - An open source JavaScript library for creating diagrams.
 * [Node.js](http://nodejs.org/) - A platform built on Chrome's JavaScript runtime.
 * [Total.js](http://www.totaljs.com/) - Framework for building Web applications using JavaScript.
