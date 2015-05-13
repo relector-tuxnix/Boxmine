@@ -66,7 +66,7 @@ Visit in a modern web browser:
 * [JointJS](http://www.jointjs.com/) - An open source JavaScript library for creating diagrams.
 * [Node.js](http://nodejs.org/) - A platform built on Chrome's JavaScript runtime.
 * [Total.js](http://www.totaljs.com/) - Framework for building Web applications using JavaScript.
-* [Onsen UI](http://components.onsenui.io/) - An elements-based HTML5 UI Framework.
+* [Pure.css](https://github.com/yahoo/pure/) - A set of small, responsive CSS modules.
 * [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) - A basic set of desktop icons.
 * [Cheser Icon Theme](http://gnome-look.org/content/show.php/Cheser+Icons?content=113386) - A mix of different Tango-style icons.
 
