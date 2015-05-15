@@ -1,22 +1,33 @@
 html {
-	overflow-y: scroll;
-	font:75% 'Lucida Sans Unicode','Lucida Grande',arial,helvetica,sans-serif;
+	background-color: #E9E9E9;
+	overflow-x: hidden;
+}
+
+body {
+	background: none;
 }
 
 #wrapper {
 	margin: 0 auto;
 }
 
-#navigation {
+#nav-panel {
+	margin: 10px;
 	display: block;
-	border: 1px solid black;
-	border-bottom: 0;
 	height: 32px;
 	padding: 5px 10px;
-	margin-top: 5px;
+	border-radius: 6px;
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
 }
 
-#paper_container {
+	#alert-panel {
+		height: 16px;
+		line-height: 16px;
+		vertical-align: middle;
+	}
+
+#paper-container {
 	border: 1px solid black;
 	background: #CACACA;
 	overflow: scroll;
@@ -24,11 +35,11 @@ html {
 	padding: 10px;
 }
 
-	#paper_container .show_grid {
+	#paper-container .show-grid {
 		background-image: url('/images/boxmine/grid.gif');
 	}
 
-	#paper_container .hide_grid {
+	#paper-container .hide-grid {
 		background-image: none;
 	}
 
@@ -46,190 +57,47 @@ html {
 	top: 0;
 }
 
-	
-.menu_item {
-	float: left;
+.menu-item {
+	display: inline-block;
 	padding: 0;
 	margin: 0;
-	border: 1px solid white;
 	width: 32px;
 	height: 32px;
-	padding-left: 5px;
 }
-		.menu_item:hover > span {
-			display: block;	
-		}
-		
-		.menu_item:active {
-			position:relative;
-			top:1px;
-		}
-		
-		.menu_item span {
-			position: relative;
-			width: 120px;
-			height: 20px;
-			text-align: center;
-			border: 1px solid black;
-			background: white;
-			padding: 0 10px;
+		.menu-item span {
 			display: none;
-			background-color: white;	
-			top: 40px;
-			left: -60px;
 		}
 
-.menu_spacer {
+.menu-spacer {
 	background: black;
 	margin: 0px 10px;
-	width: 2px;
 	height: 32px;
 	width: 1px;
 	overflow: hidden;
-	float: left;
+	display: inline-block;
 }
 
-#cut {
-	background:url('/images/boxmine/icons/32x32/actions/edit-cut.png') no-repeat no-repeat;
-}
 
-#copy {
-	background:url('/images/boxmine/icons/32x32/actions/edit-copy.png') no-repeat no-repeat;
-}
-
-#paste {
-	background:url('/images/boxmine/icons/32x32/actions/edit-paste.png') no-repeat no-repeat;
-}
-
-#delete {
-	background:url('/images/boxmine/icons/32x32/actions/edit-delete.png') no-repeat no-repeat;
-}
-
-#undo {
-	background:url('/images/boxmine/icons/32x32/actions/edit-undo.png') no-repeat no-repeat;
-}
-
-#redo {
-	background:url('/images/boxmine/icons/32x32/actions/edit-redo.png') no-repeat no-repeat;
-}
-
-#zoom_in {
-	background:url('/images/boxmine/icons/32x32/actions/zoom-in.png') no-repeat no-repeat;
-}
-
-#zoom_out {
-	background:url('/images/boxmine/icons/32x32/actions/zoom-out.png') no-repeat no-repeat;
-}
-
-#zoom_reset {
-	background:url('/images/boxmine/icons/32x32/actions/zoom-original.png') no-repeat no-repeat;
-}
-
-#group {
-	background:url('/images/boxmine/icons/32x32/actions/group.png') no-repeat no-repeat;
-}
-
-#ungroup {
-	background:url('/images/boxmine/icons/32x32/actions/ungroup.png') no-repeat no-repeat;
-}
-
-#select_all {
-	background:url('/images/boxmine/icons/32x32/actions/edit-select-all.png') no-repeat no-repeat;
-}
-
-#save_document {
-	background:url('/images/boxmine/icons/32x32/actions/document-save.png') no-repeat no-repeat;
-}
-
-#export_document {
-	background:url('/images/boxmine/icons/32x32/actions/document-save-as.png') no-repeat no-repeat;
-}
-
-#new_document {
-	background:url('/images/boxmine/icons/32x32/actions/window-new.png') no-repeat no-repeat;
-}
-
-#open_document {
-	background:url('/images/boxmine/icons/32x32/actions/document-open.png') no-repeat no-repeat;
-}
-	
-#toggle_grid {
-	background:url('/images/boxmine/icons/32x32/actions/view-calendar-month.png') no-repeat no-repeat;
-}
-
-#attributes {
-	background:url('/images/boxmine/icons/32x32/actions/system-run.png') no-repeat no-repeat;
-}
-
-#insert_image {
-	background:url('/images/boxmine/icons/32x32/actions/insert-image.png') no-repeat no-repeat;
-}
-
-#insert_object {
-	background:url('/images/boxmine/icons/32x32/actions/insert-object.png') no-repeat no-repeat;
-}
-
-#insert_text {
-	background:url('/images/boxmine/icons/32x32/actions/insert-text.png') no-repeat no-repeat;
-}
-
-#move_up {
-	background:url('/images/boxmine/icons/32x32/actions/go-up.png') no-repeat no-repeat;
-}
-
-#move_down {
-	background:url('/images/boxmine/icons/32x32/actions/go-down.png') no-repeat no-repeat;
-}
-
-#move_top{
-	background:url('/images/boxmine/icons/32x32/actions/go-top.png') no-repeat no-repeat;
-}
-
-#move_bottom {
-	background:url('/images/boxmine/icons/32x32/actions/go-bottom.png') no-repeat no-repeat;
-}
 
 .button {
-	background-color:#f9f9f9;
-	border-top-left-radius:0px;
-	border-top-right-radius:0px;
-	border-bottom-right-radius:0px;
-	border-bottom-left-radius:0px;
-	text-indent:0px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#666666;
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	font-style:normal;
-	height:32px;
-	line-height: 32px;
-	padding: 0px 20px;
-	min-width: 60px;
-	text-decoration:none;
-	text-align:center;
-	float: right;
-	margin: 5px;
+	margin: 0;
+	font-size: 0.88889rem !important;
 }
 
 	.button:hover {
-		background-color:#e9e9e9;
 	}
 
 	.button:active {
-		position:relative;
-		top:1px;
 	}
 
 
-.field_group {
+.field-group {
 	clear: both;
 	height: 30px;
 	width: 100%;
 }
 
-.field_label {
+.field-label {
 	text-align: right;
 	float: left;
 	font-weight: bold;
@@ -238,7 +106,7 @@ html {
 	width: 100px;
 }
 
-.field_element {
+.field-element {
 	float: left;
 }
 
@@ -246,7 +114,7 @@ html {
 	display: none;
 }
 
-#tab_strip {
+#tab-strip {
 	border: 0;
 	background: white;
 }
@@ -276,3 +144,37 @@ html {
 		.shape h4:visited {
 			text-decoration: none;
 		}
+
+.reveal-modal.open {
+	top:40%!important; /* override inline style injected from JS */
+}
+
+#login-lightbox, #register-lightbox {
+	width: 500px;
+}
+
+#error-lightbox {
+	width: 400px;
+}
+	 
+	#error-message {
+		text-align: center;
+	}
+
+.icon-bar.five-up .item {
+	margin: 0 !important;
+	padding: 15px 5px !important;
+	width: 95px;
+}
+
+.icon-bar.five-up label {
+	font-size: 0.9rem !important;
+	margin-top: 0.2rem !important;
+}
+
+
+.reveal-modal-bg {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.65);
+}
+
+

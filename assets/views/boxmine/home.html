@@ -3,101 +3,306 @@
 <html lang="en">
 
 	<head>
-		<meta charset="utf8"/>
-
 		<title>{{locale "site-title"}}</title>
 
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
                 <link type="image/x-icon" rel="icon" href="/images/boxmine/favicon.ico">
 
  		<link rel="stylesheet" type="text/css" href="/styles/elastic-core/font-awesome.css"/>
 		<link rel="stylesheet" type="text/css" href="/styles/boxmine/joint.css" />
 
-		<link rel="stylesheet" type="text/css" href="/styles/elastic-core/core.css">
+		<!-- <link rel="stylesheet" type="text/css" href="/styles/elastic-core/core.css" /> -->
+		<link rel="stylesheet" type="text/css" href="/libs/boxmine/foundation/css/foundation.css" />
        		<link rel="stylesheet" type="text/css" href="/styles/boxmine/global.css" />
 
-		<script type="text/javascript" src="/libs/boxmine/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/scripts/boxmine/shared.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/libs/boxmine/foundation/js/vendor/jquery.js"></script>
 		<script type="text/javascript" src="/libs/boxmine/joint.min.js"></script>
-		
+		<script type="text/javascript" src="/libs/boxmine/foundation/js/vendor/modernizr.js"></script>
+		<script type="text/javascript" src="/libs/boxmine/foundation/js/foundation.min.js"></script>
 	</head>
 	
 	<body>
 
-		{{{saveDocumentWindow_html}}}
-		{{{objectAttributesWindow_html}}}
-		{{{openDocumentWindow_html}}}
-		{{{insertObjectWindow_html}}}
-		{{{insertImageWindow_html}}}
-		{{{imageAttributesWindow_html}}}
-		{{{textAttributesWindow_html}}}
-		{{{exportDocumentWindow_html}}}
-
 		<script type="text/javascript">
-			{{{grapher_js}}}
+			{{{home_js}}}
 		</script>
 
-		<div id="open_document_window"></div>
-		<div id="save_document_window"></div>
-		<div id="export_document_window"></div>
-		
-		<div id="object_attributes_window"></div>
-		<div id="text_attributes_window"></div>
-		<div id="image_attributes_window"></div>
-		
-		<div id="insert_object_window"></div>
-		<div id="insert_image_window"></div>
-		
+		{{#if user}}
+			{{{saveDocumentWindow_html}}}
+			{{{objectAttributesWindow_html}}}
+			{{{openDocumentWindow_html}}}
+			{{{insertObjectWindow_html}}}
+			{{{insertImageWindow_html}}}
+			{{{imageAttributesWindow_html}}}
+			{{{textAttributesWindow_html}}}
+			{{{exportDocumentWindow_html}}}
+
+			<script type="text/javascript">
+				{{{grapher_js}}}
+			</script>
+		{{/if}}
+
+		<div id="error-lightbox" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+			<div class="row collapse">
+				<div id="error-message" class="large expand columns">An error occured!</div>
+			</div>
+
+			<div class="row">&nbsp;</div>
+
+			<div class="row collapse">
+				<div class="large-3 large-centered columns">
+					<a href="#" class="lightbox-cancel-button tiny button alert expand">Ok</a>
+				</div>
+			</div>
+		</div>
+
+
+
 		<div id="wrapper">
 			
-			<div id="navigation">
-		
-				<div id="new_document" class="menu_item"><span>New Document</span></div>
-				<div id="open_document" class="menu_item"><span>Open Document</span></div>
-				<div id="save_document" class="menu_item"><span>Save Document</span></div>
-				<div id="export_document" class="menu_item"><span>Export Document</span></div>
-			
-				<div class="menu_spacer"></div>
-				
-				<div id="undo" class="menu_item"><span>Undo</span></div>
-				<div id="redo" class="menu_item"><span>Redo</span></div>
-				<div id="cut" class="menu_item"><span>Cut</span></div>
-				<div id="copy" class="menu_item"><span>Copy</span></div>
-				<div id="paste" class="menu_item"><span>Paste</span></div>
-				<div id="delete" class="menu_item"><span>Delete</span></div>
-				<div id="select_all" class="menu_item"><span>Select All</span></div>
+			{{#if user}}
 
-				<div class="menu_spacer"></div>
+				<div class="icon-bar five-up">
+					<a id="new-document-button" class="item">
+						<img src="/images/boxmine/window-new.png">
+						<label>New</label>
+					</a>
+					<a id="open-document-button" class="item">
+						<img src="/images/boxmine/document-open.png">
+						<label>Open</label>
+					</a>
+					<a id="save-document-button" class="item">
+						<img src="/images/boxmine/document-save.png">
+						<label>Save</label>
+					</a>
+					<a id="export-document-button" class="item">
+						<img src="/images/boxmine/document-save-as.png">
+						<label>Export</label>
+					</a>
+					<a id="undo-button" class="item">
+						<img src="/images/boxmine/edit-undo.png">
+						<label>Undo</label>
+					</a>
+					<a id="redo-button" class="item">
+						<img src="/images/boxmine/edit-redo.png">
+						<label>Redo</label>
+					</a>
+					<a id="cut-button" class="item">
+						<img src="/images/boxmine/edit-cut.png">
+						<label>Cut</label>
+					</a>
+					<a id="copy-button" class="item">
+						<img src="/images/boxmine/edit-copy.png">
+						<label>Copy</label>
+					</a>
+					<a id="paste-button" class="item">
+						<img src="/images/boxmine/edit-paste.png">
+						<label>Paste</label>
+					</a>
+					<a id="delete-button" class="item">
+						<img src="/images/boxmine/edit-delete.png">
+						<label>Delete</label>
+					</a>
+					<a id="select-all-button" class="item">
+						<img src="/images/boxmine/edit-select-all.png">
+						<label>Select All</label>
+					</a>
+					<a id="zoom-in-button" class="item">
+						<img src="/images/boxmine/zoom-in.png">
+						<label>Zoom In</label>
+					</a>
+					<a id="zoom-reset-button" class="item">
+						<img src="/images/boxmine/zoom-original.png">
+						<label>Zoom Reset</label>
+					</a>
+					<a id="zoom-out-button" class="item">
+						<img src="/images/boxmine/zoom-out.png">
+						<label>Zoom Out</label>
+					</a>
+					<a id="group-button" class="item">
+						<img src="/images/boxmine/group.png">
+						<label>Group</label>
+					</a>
+					<a id="ungroup-button" class="item">
+						<img src="/images/boxmine/ungroup.png">
+						<label>Ungroup</label>
+					</a>
+					<a id="move-up-button" class="item">
+						<img src="/images/boxmine/go-up.png">
+						<label>Move Up</label>
+					</a>
+					<a id="move-down-button" class="item">
+						<img src="/images/boxmine/go-down.png">
+						<label>Move Down</label>
+					</a>
+					<a id="move-top-button" class="item">
+						<img src="/images/boxmine/go-top.png">
+						<label>Move Top</label>
+					</a>
+					<a id="move-bottom-button" class="item">
+						<img src="/images/boxmine/go-bottom.png">
+						<label>Move Bottom</label>
+					</a>
+					<a id="toggle-grid-button" class="item">
+						<img src="/images/boxmine/view-calendar-month.png">
+						<label>Toggle Grid</label>
+					</a>
+					<a id="attributes-button" class="item">
+						<img src="/images/boxmine/system-run.png">
+						<label>Attributes</label>
+					</a>
+					<a id="insert-object-button" class="item">
+						<img src="/images/boxmine/insert-object.png">
+						<label>Insert Object</label>
+					</a>
+					<a id="insert-image-button" class="item">
+						<img src="/images/boxmine/insert-image.png">
+						<label>Insert Image</label>
+					</a>
+					<a id="insert-text-button" class="item">
+						<img src="/images/boxmine/insert-text.png">
+						<label>Insert Text</label>
+					</a>
+					<a id="logout-button" class="item" href="{{pages.logout.uri}}">
+						<img src="/images/boxmine/application-exit.png">
+						<label>Logout</label>
+					</a>
+				</div>
+
+			{{else}}
+
+				<div class="icon-bar five-up">
+					<a id="login-button" data-reveal-id="login-lightbox" class="item">
+						<img src="/images/boxmine/cheese-take-photo.png">
+						<label>Login</label>
+					</a>
+					<a id="register-button" data-reveal-id="register-lightbox" class="item">
+						<img src="/images/boxmine/contact-new.png">
+						<label>Register</label>
+					</a>
+				</div>
+
+				<div id="login-lightbox" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+					<div class="row collapse">
+						<div class="small-4 columns">
+							<span class="prefix">Email</span>
+						</div>
 				
-				<div id="zoom_in" class="menu_item"><span>Zoom In</span></div>
-				<div id="zoom_reset" class="menu_item"><span>Zoom Reset</span></div>
-				<div id="zoom_out" class="menu_item"><span>Zoom Out</span></div>
-			
-				<div class="menu_spacer"></div>
-							
-				<div id="group" class="menu_item"><span>Group</span></div>
-				<div id="ungroup" class="menu_item"><span>Ungroup</span></div>
-				<div id="move_up" class="menu_item"><span>Move Up</span></div>
-				<div id="move_down" class="menu_item"><span>Move Down<span></div>
-				<div id="move_top" class="menu_item"><span>Move Top</span></div>
-				<div id="move_bottom" class="menu_item"><span>Move Bottom</span></div>
-			
-				<div class="menu_spacer"></div>
+						<div class="small-8 columns">
+							<input type="text" id="login-email">
+						</div>
+					</div>
+
+					<div class="row collapse">
+						<div class="small-4 columns">
+							<span class="prefix">Password</span>
+						</div>
+				
+						<div class="small-8 columns">
+							<input type="text" id="login-password">
+						</div>
+					</div>
+
+					<div class="row collapse">
+						<div class="large-6 columns">
+							<a href="#" class="lightbox-cancel-button tiny button alert expand">Close</a>
+						</div>
+						<div class="large-6 columns">
+							<a href="#" id="login-submit-button" class="tiny button expand">Login</a>
+						</div>
+					</div>
+				</div>
+
+				{{#if pages.register.active}}
+
+					<div id="register-button" data-reveal-id="register-lightbox" class="menu-item"><span>Register</span></div>
+	
+					<div id="register-lightbox" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+						<div class="row collapse">
+							<div class="small-4 columns">
+								<span class="prefix">Email</span>
+							</div>
 					
-				<div id="toggle_grid" class="menu_item"><span>Toggle Grid</span></div>
+							<div class="small-8 columns">
+								<input type="text" id="register-email">
+							</div>
+						</div>
+
+						<div class="row collapse">
+							<div class="small-4 columns">
+								<span class="prefix">Password</span>
+							</div>
+					
+							<div class="small-8 columns">
+								<input type="text" id="register-password">
+							</div>
+						</div>
+
+						<div class="row collapse">
+							<div class="small-4 columns">
+								<span class="prefix">Confirm Password</span>
+							</div>
+					
+							<div class="small-8 columns">
+								<input type="text" id="register-confirm">
+							</div>
+						</div>
+
+						<div class="row collapse">
+							<div class="large-6 columns">
+								<a href="#" class="lightbox-cancel-button tiny button alert expand">Close</a>
+							</div>
+							<div class="large-6 columns">
+								<a href="#" id="register-submit-button" class="tiny button expand">Register</a>
+							</div>
+						</div>
+					</div>
+
+				{{/if}}
+
+			{{/if}}
+
 			
-				<div class="menu_spacer"></div>
-				
-				<div id="attributes" class="menu_item"><span>Attributes</span></div>
-				<div id="insert_object" class="menu_item"><span>Insert Object</span></div>
-				<div id="insert_image" class="menu_item"><span>Insert Image</span></div>
+			{{#if user}}
+
+			<div class="row">
+
+<div class="large-9 columns">
+				<div id="paper-container">
+					<div id="paper" class="show-grid"></div>
+				</div>
+</div>
+
+<div class="large-3 columns">
+				<ul class="accordion" data-accordion>
+				  <li class="accordion-navigation">
+				    <a href="#panel1a">Accordion 1</a>
+				    <div id="panel1a" class="content active">
+				      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				    </div>
+				  </li>
+				  <li class="accordion-navigation">
+				    <a href="#panel2a">Accordion 2</a>
+				    <div id="panel2a" class="content">
+				      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				    </div>
+				  </li>
+				</ul>
+</div>
+
 			</div>
-				
-			<div id="paper_container">
-				<div id="paper" class="show_grid"></div>
-			</div>
+
+
+
+			{{else}}
 			
-			{{{body}}}
+				{{{body}}}
+
+			{{/if}}
 		</div>
 	</body>
 </html>

@@ -19,13 +19,6 @@ $.apiDeleteByURI = {
 	label: 'Delete.'
 };
 
-$.apiRegister = {
-	uri: '/api/register',
-	options: ['unauthorize', 'post'],
-	label: 'API Register',
-	active: true
-};
-
 $.error = {
 	uri: '/error',
 	options: [],
@@ -59,18 +52,12 @@ $.home = {
 		{'exportDocumentWindow_js' : 'boxmine/exportDocumentWindow.js'},
 		{'exportDocumentWindow_html' : 'boxmine/exportDocumentWindow.html'},
 		{'grapher_js' : 'boxmine/grapher.js'},
+		{'home_js' : 'boxmine/home.js'},
 		{'default' : 'boxmine/home.html'}
 	],
 	options: ['get'],
 	above: [],
 	below: []
-};
-
-$.register = {
-	uri: '/register',
-	options: [],
-	label: 'Register',
-	active: true
 };
 
 
