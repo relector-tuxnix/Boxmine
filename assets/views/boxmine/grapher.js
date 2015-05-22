@@ -10,36 +10,68 @@ $(document).ready(function() {
 		return false;
 	}); 
 			
-	joint.shapes.basic.Blob = joint.shapes.basic.Generic.extend({
-
-		markup: [
-			'<g class="rotatable">',
-				'<g class="scalable">',
-					'<circle cx="233" cy="233" fill="#000" r="231" class="class-ying"/>',
-					'<path d="M 233,459 a 226 226 0 0 1 0,-452 a 113 113 0 0 1 0,226 z" fill="#fff" class="class-yang"/>',
-					'<circle cx="233" cy="346" r="113" fill="#000" class="class-ying"/>',
-					'<circle cx="233" cy="120" fill="#000" r="30" class="class-ying"/>',
-					'<circle cx="233" cy="346" r="30" fill="#fff" class="class-yang"/>',
-				'</g>',
-			'</g>',
-		].join(''),
-		
-		defaults: joint.util.deepSupplement({
-		
-			type: 'basic.Boxmine',
-			
-			attrs: {
-				'.class-ying': { 'fill': '#3498db' },
-				'.class-yang': { 'fill': '#000' }
-			}
-			
-		}, joint.shapes.basic.Generic.prototype.defaults)
+	$(window).resize(function() {
+		console.log("Window resized!");
+		updateDimensions();
 	});
 	
 	window.boxmine = {};
 	window.boxmine.selected = Array();
 	window.boxmine.activeWindow = null;
+
+	window.boxmine.registerObject = function(name, callback) {
+
+		if(name in joint.shapes.basic) {
+			callback();
+			return;
+		}
+
+		$.get("/images/boxmine/shapes/" + name + ".svg", null, function(data) {
+
+			data = data.toString();
+			data = data.replace(/<svg .*>/g, "");
+			data = data.replace("</svg>", "");
+			data = data.replace(/\s{2,}/g, ' ');
+			data = data.replace(/\t/g, ' ');
+			data = data.trim().replace(/(\r\n|\n|\r)/g,"");
+
+			joint.shapes.basic[name] = joint.shapes.basic.Generic.extend({
+
+				markup: data,
+				
+				defaults: joint.util.deepSupplement({
+				
+					type: 'basic.Boxmine',
+					
+					attrs: {
+						'.class-ying': { 'fill': '#3498db' },
+						'.class-yang': { 'fill': '#000' }
+					}
+					
+				}, joint.shapes.basic.Generic.prototype.defaults)
+			});
+
+			callback();
+
+		},  'text');
+	};
+
+	window.boxmine.addToPaper = function(name) {
+
+		var rect = new joint.shapes.basic[name]({
+			position: { x: 0, y: 0 },
+			size: { width: 100, height: 100 },
+			attrs: {
+				'.class-ying': { fill: 'black' },
+				'.class-yang': { fill: 'white' }
+			}
+		});
+
+		console.log(rect.markup);
 	
+		window.boxmine.graph.addCell(rect);
+	};
+
 	window.boxmine.select = function(object) {
 		console.log(object);	
 		object.highlight();
@@ -121,34 +153,29 @@ $(document).ready(function() {
 		}
 	};
 	
-	
-	(function() {
-		$("#paper").width("2000");
-		$("#paper").height("1000");
-		
-		$("#paper_container").height($(window).height() - 100);
-	})();
-	
 	window.boxmine.graph = new joint.dia.Graph;
 
 	window.boxmine.paper = new joint.dia.Paper({
 		el: $('#paper'),
-		width: 2000,
-		height: 1000,
+		width: 100,
+		height: 100,
 		gridSize: 1,
 		perpendicularLinks: false,
 		model: window.boxmine.graph
 	});
-	
-	var rect = new joint.shapes.basic.Blob({
-		position: { x: 100, y: 30 },
-		size: { width: 200, height: 200 },
-		attrs: {
-			'.class-ying': { fill: 'black' },
-			'.class-yang': { fill: 'white' }
-		}
-	});
 
+	function updateDimensions() {
+		var width = $('#paper-container').width();
+		var height = $('#paper-container').height() - 80;
+
+		$("#paper").height(height);
+		$("#paper").width(width);
+
+		window.boxmine.paper.setDimensions(width, height); 
+	}
+
+	updateDimensions();
+	
 	var link = new joint.dia.Link({
 		source: { x: 10, y: 20 },
 		target: { x: 350, y: 20 },
@@ -161,10 +188,7 @@ $(document).ready(function() {
 
 	window.boxmine.graph.addCell(link);
 	
-	console.log(rect.markup);
-	
-	window.boxmine.graph.addCell(rect);
-	
+
 	var text = new joint.shapes.basic.Text({
 		position: { x: 170, y: 50 },
 		size: { width: 40, height: 30 },
@@ -173,8 +197,11 @@ $(document).ready(function() {
 	
 	window.boxmine.graph.addCell(text);
 
-	
-	$("#zoom-in-button").bind("click", function() {
+ $(window).load(function () {	
+
+  	var zoomPanel = $("#zoom-panel").contents();
+
+	$(zoomPanel).find("#zoom-in-button").bind("click", function() {
 		window.boxmine.paper.options.width += 50;
 		window.boxmine.paper.options.height += 50;
 		
@@ -185,7 +212,7 @@ $(document).ready(function() {
 		$("#paper").height(window.boxmine.paper.options.height);
 	});
 	
-	$("#zoom-reset-button").bind("click", function() {
+	$(zoomPanel).find("#zoom-reset-button").bind("click", function() {
 	
 		window.boxmine.paper.options.width = 1000;
 		window.boxmine.paper.options.height = 1000;
@@ -197,7 +224,7 @@ $(document).ready(function() {
 		$("#paper").height(window.boxmine.paper.options.height);
 	});
 	
-	$("#zoom-out-button").bind("click", function() {
+	$(zoomPanel).find("#zoom-out-button").bind("click", function() {
 		
 		window.boxmine.paper.options.width -= 50;
 		window.boxmine.paper.options.height -= 50;
@@ -208,6 +235,7 @@ $(document).ready(function() {
 		$("#paper").width(window.boxmine.paper.options.width);
 		$("#paper").height(window.boxmine.paper.options.height);
 	});
+});
 	
 	/*
 	window.boxmine.graph.on('all', function(eventName, cell)

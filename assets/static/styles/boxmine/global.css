@@ -1,14 +1,10 @@
 html {
-	background-color: #E9E9E9;
 	overflow-x: hidden;
 }
 
 body {
+	overflow: hidden;
 	background: none;
-}
-
-#wrapper {
-	margin: 0 auto;
 }
 
 #nav-panel {
@@ -28,9 +24,10 @@ body {
 	}
 
 #paper-container {
-	border: 1px solid black;
-	background: #CACACA;
-	overflow: scroll;
+	background: #FFFFFF;
+	overflow: none;
+	height: 98%;
+	width: 100%;
 	display: block;
 	padding: 10px;
 }
@@ -45,7 +42,6 @@ body {
 
 #paper {
 	background: #FFFFFF;
-	border: 1px solid gray;
 	margin: 0px auto;
 	background-repeat: repeat;
 	background-size: 10px 10px;
@@ -55,29 +51,9 @@ body {
 	padding: 0;
 	right: 0;
 	top: 0;
+	border-right: 1px solid #E7EFDE;
+	border-bottom: 1px solid #E7EFDE;
 }
-
-.menu-item {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-	width: 32px;
-	height: 32px;
-}
-		.menu-item span {
-			display: none;
-		}
-
-.menu-spacer {
-	background: black;
-	margin: 0px 10px;
-	height: 32px;
-	width: 1px;
-	overflow: hidden;
-	display: inline-block;
-}
-
-
 
 .button {
 	margin: 0;
@@ -89,61 +65,6 @@ body {
 
 	.button:active {
 	}
-
-
-.field-group {
-	clear: both;
-	height: 30px;
-	width: 100%;
-}
-
-.field-label {
-	text-align: right;
-	float: left;
-	font-weight: bold;
-	padding: 5px;
-	padding: 2px 20px 2px 2px;
-	width: 100px;
-}
-
-.field-element {
-	float: left;
-}
-
-.default-window {
-	display: none;
-}
-
-#tab-strip {
-	border: 0;
-	background: white;
-}
-
-.shape {
-	width: 128px;
-	height: 128px;
-	display: block;
-	border: 1px solid black;
-	margin: 5px;
-	padding: 5px;
-	text-decoration: none;
-}
-
-	.shape img {
-		border: 0;
-		margin: auto;
-		display: block;
-		margin-top: 20px;
-		margin-bottom: 15px;
-	}
-	
-	.shape h4 {
-		text-align: center;
-		text-decoration: none;
-	}
-		.shape h4:visited {
-			text-decoration: none;
-		}
 
 .reveal-modal.open {
 	top:40%!important; /* override inline style injected from JS */
@@ -177,4 +98,48 @@ body {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.65);
 }
 
+.column, .columns, .accordian {
+	padding: 0;
+	margin: 0;
+}
 
+#window-container {
+	background-color: #E9E9E9;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+	.default-window {
+		display: none;
+	}
+
+
+#insert-object-window {
+	text-align: center;
+}
+
+	.object-item {
+		display: inline-block;
+		margin-left: 10px;
+		margin-top: 10px;
+		vertical-align: top;
+	}
+
+		.object-item img {
+			width: 100px;
+			height: 100px;
+			display: block;
+			border: 1px solid black;
+			margin: 5px;
+			padding: 5px;
+			text-decoration: none;
+			border: 0;
+			margin: auto;
+			display: inline-block;
+		}
+
+#zoom-panel {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}

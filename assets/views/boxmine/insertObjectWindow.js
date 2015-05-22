@@ -1,8 +1,57 @@
 $(document).ready(function() {
 	
-	$("#insert_object").click(function() {
+	$("#insert-object-button").click(function() {
 
 		console.log("Loaded Insert Object Window.");
+
+		$('#insert-object-window').show();
+
+		$(".object-item").on("mousedown", function(e) {
+
+			var item = $(e.target).clone();
+
+			$(e.target).parent().append(item);
+
+			var offset = $(e.target).offset();
+
+			$(item).offset(offset);
+
+			window.boxmine.dragging = $(item);
+
+			$(item).css('position', 'fixed');
+
+			return false;
+		});
+
+		$('body').on("mouseup", function (e) {
+
+			if(window.boxmine.dragging != null) {
+
+				var objectSrc = $(window.boxmine.dragging).attr('data-name');
+
+				window.boxmine.registerObject(objectSrc, function() {
+
+					window.boxmine.addToPaper(objectSrc);
+				});
+
+				$(window.boxmine.dragging).remove();
+
+				window.boxmine.dragging = null;
+			}
+		});
+
+		$('body').on("mousemove", function(e) {
+			if(window.boxmine.dragging) {
+
+				window.boxmine.dragging.offset({
+					top: e.pageY - 50,
+					left: e.pageX - 50
+				});
+			}
+		});
+
+
+/*
 
 		var windowFrame = $("#insert_object_window");
 		var navigationButton = $("#insert_object");
@@ -62,5 +111,6 @@ $(document).ready(function() {
 			windowFrame.data("kendoWindow").close();
 			windowFrame.data("kendoWindow").center();
 		}	
+		*/
 	});	
 });

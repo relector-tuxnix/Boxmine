@@ -32,15 +32,6 @@
 		</script>
 
 		{{#if user}}
-			{{{saveDocumentWindow_html}}}
-			{{{objectAttributesWindow_html}}}
-			{{{openDocumentWindow_html}}}
-			{{{insertObjectWindow_html}}}
-			{{{insertImageWindow_html}}}
-			{{{imageAttributesWindow_html}}}
-			{{{textAttributesWindow_html}}}
-			{{{exportDocumentWindow_html}}}
-
 			<script type="text/javascript">
 				{{{grapher_js}}}
 			</script>
@@ -60,140 +51,145 @@
 			</div>
 		</div>
 
+		{{#if user}}
 
+			<div class="icon-bar five-up">
+				<a id="new-document-button" class="item">
+					<img src="/images/boxmine/window-new.png">
+					<label>New</label>
+				</a>
+				<a id="open-document-button" class="item">
+					<img src="/images/boxmine/document-open.png">
+					<label>Open</label>
+				</a>
+				<a id="save-document-button" class="item">
+					<img src="/images/boxmine/document-save.png">
+					<label>Save</label>
+				</a>
+				<a id="export-document-button" class="item">
+					<img src="/images/boxmine/document-save-as.png">
+					<label>Export</label>
+				</a>
+				<a id="undo-button" class="item">
+					<img src="/images/boxmine/edit-undo.png">
+					<label>Undo</label>
+				</a>
+				<a id="redo-button" class="item">
+					<img src="/images/boxmine/edit-redo.png">
+					<label>Redo</label>
+				</a>
+				<a id="cut-button" class="item">
+					<img src="/images/boxmine/edit-cut.png">
+					<label>Cut</label>
+				</a>
+				<a id="copy-button" class="item">
+					<img src="/images/boxmine/edit-copy.png">
+					<label>Copy</label>
+				</a>
+				<a id="paste-button" class="item">
+					<img src="/images/boxmine/edit-paste.png">
+					<label>Paste</label>
+				</a>
+				<a id="delete-button" class="item">
+					<img src="/images/boxmine/edit-delete.png">
+					<label>Delete</label>
+				</a>
+				<a id="select-all-button" class="item">
+					<img src="/images/boxmine/edit-select-all.png">
+					<label>Select All</label>
+				</a>
+				<a id="group-button" class="item">
+					<img src="/images/boxmine/group.png">
+					<label>Group</label>
+				</a>
+				<a id="ungroup-button" class="item">
+					<img src="/images/boxmine/ungroup.png">
+					<label>Ungroup</label>
+				</a>
+				<a id="move-up-button" class="item">
+					<img src="/images/boxmine/go-up.png">
+					<label>Move Up</label>
+				</a>
+				<a id="move-down-button" class="item">
+					<img src="/images/boxmine/go-down.png">
+					<label>Move Down</label>
+				</a>
+				<a id="move-top-button" class="item">
+					<img src="/images/boxmine/go-top.png">
+					<label>Move Top</label>
+				</a>
+				<a id="move-bottom-button" class="item">
+					<img src="/images/boxmine/go-bottom.png">
+					<label>Move Bottom</label>
+				</a>
+				<a id="toggle-grid-button" class="item">
+					<img src="/images/boxmine/view-calendar-month.png">
+					<label>Toggle Grid</label>
+				</a>
+				<a id="insert-object-button" class="item">
+					<img src="/images/boxmine/insert-object.png">
+					<label>Insert Object</label>
+				</a>
+				<a id="logout-button" class="item" href="{{pages.logout.uri}}">
+					<img src="/images/boxmine/application-exit.png">
+					<label>Logout</label>
+				</a>
+			</div>
 
-		<div id="wrapper">
+		{{else}}
+
+			<div class="icon-bar five-up">
+				<a id="login-button" data-reveal-id="login-lightbox" class="item">
+					<img src="/images/boxmine/cheese-take-photo.png">
+					<label>Login</label>
+				</a>
+				<a id="register-button" data-reveal-id="register-lightbox" class="item">
+					<img src="/images/boxmine/contact-new.png">
+					<label>Register</label>
+				</a>
+			</div>
+
+			<div id="login-lightbox" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+				<div class="row collapse">
+					<div class="small-4 columns">
+						<span class="prefix">Email</span>
+					</div>
 			
-			{{#if user}}
-
-				<div class="icon-bar five-up">
-					<a id="new-document-button" class="item">
-						<img src="/images/boxmine/window-new.png">
-						<label>New</label>
-					</a>
-					<a id="open-document-button" class="item">
-						<img src="/images/boxmine/document-open.png">
-						<label>Open</label>
-					</a>
-					<a id="save-document-button" class="item">
-						<img src="/images/boxmine/document-save.png">
-						<label>Save</label>
-					</a>
-					<a id="export-document-button" class="item">
-						<img src="/images/boxmine/document-save-as.png">
-						<label>Export</label>
-					</a>
-					<a id="undo-button" class="item">
-						<img src="/images/boxmine/edit-undo.png">
-						<label>Undo</label>
-					</a>
-					<a id="redo-button" class="item">
-						<img src="/images/boxmine/edit-redo.png">
-						<label>Redo</label>
-					</a>
-					<a id="cut-button" class="item">
-						<img src="/images/boxmine/edit-cut.png">
-						<label>Cut</label>
-					</a>
-					<a id="copy-button" class="item">
-						<img src="/images/boxmine/edit-copy.png">
-						<label>Copy</label>
-					</a>
-					<a id="paste-button" class="item">
-						<img src="/images/boxmine/edit-paste.png">
-						<label>Paste</label>
-					</a>
-					<a id="delete-button" class="item">
-						<img src="/images/boxmine/edit-delete.png">
-						<label>Delete</label>
-					</a>
-					<a id="select-all-button" class="item">
-						<img src="/images/boxmine/edit-select-all.png">
-						<label>Select All</label>
-					</a>
-					<a id="zoom-in-button" class="item">
-						<img src="/images/boxmine/zoom-in.png">
-						<label>Zoom In</label>
-					</a>
-					<a id="zoom-reset-button" class="item">
-						<img src="/images/boxmine/zoom-original.png">
-						<label>Zoom Reset</label>
-					</a>
-					<a id="zoom-out-button" class="item">
-						<img src="/images/boxmine/zoom-out.png">
-						<label>Zoom Out</label>
-					</a>
-					<a id="group-button" class="item">
-						<img src="/images/boxmine/group.png">
-						<label>Group</label>
-					</a>
-					<a id="ungroup-button" class="item">
-						<img src="/images/boxmine/ungroup.png">
-						<label>Ungroup</label>
-					</a>
-					<a id="move-up-button" class="item">
-						<img src="/images/boxmine/go-up.png">
-						<label>Move Up</label>
-					</a>
-					<a id="move-down-button" class="item">
-						<img src="/images/boxmine/go-down.png">
-						<label>Move Down</label>
-					</a>
-					<a id="move-top-button" class="item">
-						<img src="/images/boxmine/go-top.png">
-						<label>Move Top</label>
-					</a>
-					<a id="move-bottom-button" class="item">
-						<img src="/images/boxmine/go-bottom.png">
-						<label>Move Bottom</label>
-					</a>
-					<a id="toggle-grid-button" class="item">
-						<img src="/images/boxmine/view-calendar-month.png">
-						<label>Toggle Grid</label>
-					</a>
-					<a id="attributes-button" class="item">
-						<img src="/images/boxmine/system-run.png">
-						<label>Attributes</label>
-					</a>
-					<a id="insert-object-button" class="item">
-						<img src="/images/boxmine/insert-object.png">
-						<label>Insert Object</label>
-					</a>
-					<a id="insert-image-button" class="item">
-						<img src="/images/boxmine/insert-image.png">
-						<label>Insert Image</label>
-					</a>
-					<a id="insert-text-button" class="item">
-						<img src="/images/boxmine/insert-text.png">
-						<label>Insert Text</label>
-					</a>
-					<a id="logout-button" class="item" href="{{pages.logout.uri}}">
-						<img src="/images/boxmine/application-exit.png">
-						<label>Logout</label>
-					</a>
+					<div class="small-8 columns">
+						<input type="text" id="login-email">
+					</div>
 				</div>
 
-			{{else}}
-
-				<div class="icon-bar five-up">
-					<a id="login-button" data-reveal-id="login-lightbox" class="item">
-						<img src="/images/boxmine/cheese-take-photo.png">
-						<label>Login</label>
-					</a>
-					<a id="register-button" data-reveal-id="register-lightbox" class="item">
-						<img src="/images/boxmine/contact-new.png">
-						<label>Register</label>
-					</a>
+				<div class="row collapse">
+					<div class="small-4 columns">
+						<span class="prefix">Password</span>
+					</div>
+			
+					<div class="small-8 columns">
+						<input type="text" id="login-password">
+					</div>
 				</div>
 
-				<div id="login-lightbox" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+				<div class="row collapse">
+					<div class="large-6 columns">
+						<a href="#" class="lightbox-cancel-button tiny button alert expand">Close</a>
+					</div>
+					<div class="large-6 columns">
+						<a href="#" id="login-submit-button" class="tiny button expand">Login</a>
+					</div>
+				</div>
+			</div>
+
+			{{#if pages.register.active}}
+
+				<div id="register-lightbox" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 					<div class="row collapse">
 						<div class="small-4 columns">
 							<span class="prefix">Email</span>
 						</div>
 				
 						<div class="small-8 columns">
-							<input type="text" id="login-email">
+							<input type="text" id="register-email">
 						</div>
 					</div>
 
@@ -203,7 +199,17 @@
 						</div>
 				
 						<div class="small-8 columns">
-							<input type="text" id="login-password">
+							<input type="text" id="register-password">
+						</div>
+					</div>
+
+					<div class="row collapse">
+						<div class="small-4 columns">
+							<span class="prefix">Confirm Password</span>
+						</div>
+				
+						<div class="small-8 columns">
+							<input type="text" id="register-confirm">
 						</div>
 					</div>
 
@@ -212,97 +218,39 @@
 							<a href="#" class="lightbox-cancel-button tiny button alert expand">Close</a>
 						</div>
 						<div class="large-6 columns">
-							<a href="#" id="login-submit-button" class="tiny button expand">Login</a>
+							<a href="#" id="register-submit-button" class="tiny button expand">Register</a>
 						</div>
 					</div>
 				</div>
-
-				{{#if pages.register.active}}
-
-					<div id="register-button" data-reveal-id="register-lightbox" class="menu-item"><span>Register</span></div>
-	
-					<div id="register-lightbox" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-						<div class="row collapse">
-							<div class="small-4 columns">
-								<span class="prefix">Email</span>
-							</div>
-					
-							<div class="small-8 columns">
-								<input type="text" id="register-email">
-							</div>
-						</div>
-
-						<div class="row collapse">
-							<div class="small-4 columns">
-								<span class="prefix">Password</span>
-							</div>
-					
-							<div class="small-8 columns">
-								<input type="text" id="register-password">
-							</div>
-						</div>
-
-						<div class="row collapse">
-							<div class="small-4 columns">
-								<span class="prefix">Confirm Password</span>
-							</div>
-					
-							<div class="small-8 columns">
-								<input type="text" id="register-confirm">
-							</div>
-						</div>
-
-						<div class="row collapse">
-							<div class="large-6 columns">
-								<a href="#" class="lightbox-cancel-button tiny button alert expand">Close</a>
-							</div>
-							<div class="large-6 columns">
-								<a href="#" id="register-submit-button" class="tiny button expand">Register</a>
-							</div>
-						</div>
-					</div>
-
-				{{/if}}
 
 			{{/if}}
 
-			
-			{{#if user}}
+		{{/if}}
 
-			<div class="row">
+		{{#if user}}
 
-<div class="large-9 columns">
-				<div id="paper-container">
-					<div id="paper" class="show-grid"></div>
-				</div>
-</div>
-
-<div class="large-3 columns">
-				<ul class="accordion" data-accordion>
-				  <li class="accordion-navigation">
-				    <a href="#panel1a">Accordion 1</a>
-				    <div id="panel1a" class="content active">
-				      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				    </div>
-				  </li>
-				  <li class="accordion-navigation">
-				    <a href="#panel2a">Accordion 2</a>
-				    <div id="panel2a" class="content">
-				      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				    </div>
-				  </li>
-				</ul>
-</div>
-
+			<div id="paper-container">
+				<div id="paper" class="show-grid"></div>
 			</div>
 
+			<object data="/images/boxmine/zoom-panel.svg" type="image/svg+xml" id="zoom-panel" width="75" height="75"></object>	
 
+			<!--
+			<div id="window-container">
+				{{{saveDocumentWindow_html}}}
+				{{{objectAttributesWindow_html}}}
+				{{{openDocumentWindow_html}}}
+				{{{insertObjectWindow_html}}}
+				{{{imageAttributesWindow_html}}}
+				{{{textAttributesWindow_html}}}
+				{{{exportDocumentWindow_html}}}
+			</div>
+			-->
 
-			{{else}}
-			
-				{{{body}}}
+		{{else}}
+		
+			{{{body}}}
 
-			{{/if}}
-		</div>
+		{{/if}}
 	</body>
 </html>
