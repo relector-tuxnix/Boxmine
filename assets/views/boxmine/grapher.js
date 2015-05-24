@@ -199,9 +199,11 @@ $(document).ready(function() {
 
  $(window).load(function () {	
 
-  	var zoomPanel = $("#zoom-panel").contents();
+	blah.mouseupCallback = function() {
+		console.log("YOU CLICKED ME");
+	};
 
-	$(zoomPanel).find("#zoom-in-button").bind("click", function() {
+	zoompanel.inMouseupCallback = function() {
 		window.boxmine.paper.options.width += 50;
 		window.boxmine.paper.options.height += 50;
 		
@@ -210,10 +212,9 @@ $(document).ready(function() {
 		
 		$("#paper").width(window.boxmine.paper.options.width);
 		$("#paper").height(window.boxmine.paper.options.height);
-	});
-	
-	$(zoomPanel).find("#zoom-reset-button").bind("click", function() {
-	
+	};
+
+	zoompanel.resetMouseupCallback = function() {	
 		window.boxmine.paper.options.width = 1000;
 		window.boxmine.paper.options.height = 1000;
 		
@@ -222,10 +223,9 @@ $(document).ready(function() {
 		
 		$("#paper").width(window.boxmine.paper.options.width);
 		$("#paper").height(window.boxmine.paper.options.height);
-	});
+	};
 	
-	$(zoomPanel).find("#zoom-out-button").bind("click", function() {
-		
+	zoompanel.outMouseupCallback = function() {	
 		window.boxmine.paper.options.width -= 50;
 		window.boxmine.paper.options.height -= 50;
 		
@@ -234,7 +234,7 @@ $(document).ready(function() {
 		
 		$("#paper").width(window.boxmine.paper.options.width);
 		$("#paper").height(window.boxmine.paper.options.height);
-	});
+	};
 });
 	
 	/*

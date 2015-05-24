@@ -138,8 +138,13 @@ body {
 			display: inline-block;
 		}
 
-#zoom-panel {
+#zoompanel {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
+}
+
+#blah {
+	position: fixed;
+	top: 10px;
 }
