@@ -55,16 +55,18 @@ body {
 	border-bottom: 1px solid #E7EFDE;
 }
 
-.button {
-	margin: 0;
-	font-size: 0.88889rem !important;
+#menu {
+	display: block;
+	margin: 10px 10px 0;
+	width: 100%;
+	text-align: center;
 }
 
-	.button:hover {
+	.menuButton {
+		margin-right: 4px;
 	}
 
-	.button:active {
-	}
+		
 
 .reveal-modal.open {
 	top:40%!important; /* override inline style injected from JS */
@@ -142,9 +144,4 @@ body {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
-}
-
-#blah {
-	position: fixed;
-	top: 10px;
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="button.css"?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="insert-object.svg"
+   inkscape:version="0.48.4 r9939"
+   onload="init()"
+   id="canvas"
+   viewBox="0 0 48 48"
+   height="48"
+   width="48"
+   version="1.1">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1576"
+     id="namedview7"
+     showgrid="false"
+     inkscape:zoom="4.9166667"
+     inkscape:cx="-0.20338983"
+     inkscape:cy="24"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="canvas" />
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9" />
+  <script
+     xlink:href="./button.js"
+     id="button-js" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     style="fill:#000000"
+     inkscape:connector-curvature="0"
+     id="path5"
+     d="M42.0 24.0L34.5 24.0L24.0 34.5L13.5 24.0L6.0 24.0L0.0 36.0L0.0 39.0L48.0 39.0L48.0 36.0L42.0 24.0ZM0.0 42.0L48.0 42.0L48.0 45.0L0.0 45.0L0.0 42.0ZM27.0 15.0L27.0 3.0L21.0 3.0L21.0 15.0L10.5 15.0L24.0 28.5L37.5 15.0L27.0 15.0Z" />
+</svg>

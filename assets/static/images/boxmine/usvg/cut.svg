@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="button.css"?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="canvas"
+   onload="init()"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="new-document.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1576"
+     id="namedview7"
+     showgrid="true"
+     inkscape:zoom="13.906433"
+     inkscape:cx="50.512976"
+     inkscape:cy="18.701794"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="canvas">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2987" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9" />
+  <script
+     xlink:href="./button.js"
+     id="button-js" />
+
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     style="fill:#000000"
+     id="path4"
+     d="M45.0 33.0C41.847782 28.128316 36.44254 25.967262 32.925403 28.211781C32.621976 28.405864 32.342742 28.627098 32.086694 28.870455L28.332661 23.012782L37.002016 9.4380657C37.711694 8.1307739 37.97379 6.5740911 37.629032 5.0083578C37.299395 3.5120115 36.470766 2.2539945 35.355847 1.3680529L34.775202 1.0L24.498992 17.032425L14.222782 1.0L13.643145 1.3680529C12.528226 2.2539945 11.699597 3.5120115 11.36996 5.0083578C11.025202 6.5740911 11.2873 8.1307739 11.996976 9.4380657L20.666331 23.012782L16.912298 28.870455C16.65625 28.626092 16.378024 28.404858 16.073589 28.211781C12.556452 25.966256 7.1512097 28.128316 4.0 33.040716C0.84879037 37.953116 1.1461694 43.754475 4.6633064 46.0C8.1804435 48.245525 13.585686 46.083466 16.736895 41.171065L24.5 29.015263L32.263105 41.171065C35.414315 46.08246 40.819556 48.244519 44.336694 45.998994C47.853831 43.753469 48.150202 37.952111 45.0 33.03971ZM7.1078629 42.187736C4.8937333 41.544653 6.9135158 36.925082 7.8205645 35.479318C9.2389113 33.267984 11.058468 32.192987 12.289315 31.923484C12.690524 31.835994 13.248992 31.781693 13.628024 32.024045C15.961667 35.355978 10.310276 42.110517 7.1078629 42.187736ZM24.498992 25.135623C23.664315 25.135623 22.986895 24.459854 22.986895 23.627209C22.986895 22.794565 23.664315 22.118796 24.498992 22.118796C25.333669 22.118796 26.011089 22.794565 26.011089 23.627209C26.011089 24.459854 25.333669 25.135623 24.498992 25.135623ZM41.0 42.0C37.238362 40.910302 34.488216 37.701057 34.622984 33.921629C34.670364 33.001497 34.948589 32.291537 35.36996 32.023039C35.748992 31.780688 36.30746 31.834991 36.708669 31.922479C37.938508 32.191982 39.759073 33.267984 41.177419 35.478312C42.244465 37.260813 43.59948 42.410419 41.0 42.0Z" />
+</svg>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="button.css"?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="canvas"
+   onload="init()"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="paste.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1576"
+     id="namedview7"
+     showgrid="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:zoom="13.906433"
+     inkscape:cx="35.798168"
+     inkscape:cy="11.91"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="canvas">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2988" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9" />
+  <script
+     xlink:href="./button.js"
+     id="button-js" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     sodipodi:nodetypes="ccccssssscsccccccscssssscccccccc"
+     style="fill:#000000"
+     inkscape:connector-curvature="0"
+     id="path5"
+     d="M47.0 26.0L47.0 9.0L38.0 9.0L38.0 5.8666667C38.0 4.2645763 37.08125 3.0 35.5 3.0L3.875 3.0C2.29375 3.0 1.0 4.29 1.0 5.8666667L1.0 14.466667C1.0 15.71 2.29375 17.0 3.875 17.0L35.5 17.0C37.0 17.0 38.0 16.0 38.0 14.466667L38.0 12.0L44.0 12.0L44.0 23.0L18.0 23.0L18.0 29.0L16.8125 29.0C15.555017 29.0 15.0 29.442133 15.0 30.233333L15.0 44.566666C15.375 45.357866 16.019 46.0 16.8125 46.0L22.5625 46.0C23.356 46.0 24.0 45.357866 24.0 44.566666L24.0 30.233333C23.999999 29.642134 23.356 29.0 22.5625 29.0L21.0 29.0L21.0 26.0ZM4.0 9.0L4.0 6.0L35.0 6.0L35.0 9.0Z" />
+</svg>

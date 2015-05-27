@@ -53,92 +53,102 @@
 
 		{{#if user}}
 
-			<object id="blah" name="blah" data="/images/boxmine/blah.svg" type="image/svg+xml" width="75" height="75"></object>	
+			<div id="menu">
+				<object id="newDocumentButton" name="newDocumentButton" class="menuButton" data="/images/boxmine/usvg/new-document.svg" type="image/svg+xml">
+					<span>New Document</span>
+				</object>	
 
-			<div class="icon-bar five-up">
-				<a id="new-document-button" class="item">
-					<img src="/images/boxmine/window-new.png">
-					<label>New</label>
-				</a>
-				<a id="open-document-button" class="item">
-					<img src="/images/boxmine/document-open.png">
-					<label>Open</label>
-				</a>
-				<a id="save-document-button" class="item">
-					<img src="/images/boxmine/document-save.png">
-					<label>Save</label>
-				</a>
-				<a id="export-document-button" class="item">
-					<img src="/images/boxmine/document-save-as.png">
-					<label>Export</label>
-				</a>
-				<a id="undo-button" class="item">
-					<img src="/images/boxmine/edit-undo.png">
-					<label>Undo</label>
-				</a>
-				<a id="redo-button" class="item">
-					<img src="/images/boxmine/edit-redo.png">
-					<label>Redo</label>
-				</a>
-				<a id="cut-button" class="item">
-					<img src="/images/boxmine/edit-cut.png">
-					<label>Cut</label>
-				</a>
-				<a id="copy-button" class="item">
-					<img src="/images/boxmine/edit-copy.png">
-					<label>Copy</label>
-				</a>
-				<a id="paste-button" class="item">
-					<img src="/images/boxmine/edit-paste.png">
-					<label>Paste</label>
-				</a>
-				<a id="delete-button" class="item">
-					<img src="/images/boxmine/edit-delete.png">
-					<label>Delete</label>
-				</a>
-				<a id="select-all-button" class="item">
-					<img src="/images/boxmine/edit-select-all.png">
-					<label>Select All</label>
-				</a>
-				<a id="group-button" class="item">
-					<img src="/images/boxmine/group.png">
-					<label>Group</label>
-				</a>
-				<a id="ungroup-button" class="item">
-					<img src="/images/boxmine/ungroup.png">
-					<label>Ungroup</label>
-				</a>
-				<a id="move-up-button" class="item">
-					<img src="/images/boxmine/go-up.png">
-					<label>Move Up</label>
-				</a>
-				<a id="move-down-button" class="item">
-					<img src="/images/boxmine/go-down.png">
-					<label>Move Down</label>
-				</a>
-				<a id="move-top-button" class="item">
-					<img src="/images/boxmine/go-top.png">
-					<label>Move Top</label>
-				</a>
-				<a id="move-bottom-button" class="item">
-					<img src="/images/boxmine/go-bottom.png">
-					<label>Move Bottom</label>
-				</a>
-				<a id="toggle-grid-button" class="item">
-					<img src="/images/boxmine/view-calendar-month.png">
-					<label>Toggle Grid</label>
-				</a>
-				<a id="insert-object-button" class="item">
-					<img src="/images/boxmine/insert-object.png">
-					<label>Insert Object</label>
-				</a>
-				<a id="logout-button" class="item" href="{{pages.logout.uri}}">
-					<img src="/images/boxmine/application-exit.png">
-					<label>Logout</label>
-				</a>
+				<object id="deleteDocumentButton" name="deleteDocumentButton" class="menuButton" data="/images/boxmine/usvg/delete-document.svg" type="image/svg+xml">
+					<span>Delete</span>
+				</object>	
+
+				<object id="openDocumentButton" name="openDocumentButton" class="menuButton" data="/images/boxmine/usvg/open-document.svg" type="image/svg+xml">
+					<span>Open Document</span>	
+				</object>	
+
+				<object id="saveDocumentButton" name="saveDocumentButton" class="menuButton" data="/images/boxmine/usvg/save.svg" type="image/svg+xml">
+					<span>Save Document</span>
+				</object>	
+
+				<object id="exportDocumentButton" name="exportDocumentButton" class="menuButton" data="/images/boxmine/usvg/export-document.svg" type="image/svg+xml">
+					<span>Export Document</span>
+				</object>	
+
+				<object id="undoButton" name="undoButton" class="menuButton" data="/images/boxmine/usvg/undo.svg" type="image/svg+xml">
+					<span>Undo</span>
+				</object>	
+				
+				<object id="redoButton" name="redoButton" class="menuButton" data="/images/boxmine/usvg/redo.svg" type="image/svg+xml">
+					<span>Redo</span>
+				</object>	
+				
+				<object id="cutButton" name="cutButton" class="menuButton" data="/images/boxmine/usvg/cut.svg" type="image/svg+xml">
+					<span>Cutd</span>
+				</object>	
+
+				<object id="copyButton" name="copyButton" class="menuButton" data="/images/boxmine/usvg/copy.svg" type="image/svg+xml">
+					<span>Copy</span>
+				</object>	
+
+				<object id="pasteButton" name="pasteButton" class="menuButton" data="/images/boxmine/usvg/paste.svg" type="image/svg+xml">
+					<span>Paste</span>
+				</object>	
+				
+				<object id="deleteButton" name="deleteButton" class="menuButton" data="/images/boxmine/usvg/delete.svg" type="image/svg+xml">
+					<span>Delete</span>
+				</object>	
+
+				<object id="selectAllButton" name="selectAllButton" class="menuButton" data="/images/boxmine/usvg/select-all.svg" type="image/svg+xml">
+					<span>Select All</span>
+				</object>	
+
+				<object id="groupButton" name="groupButton" class="menuButton" data="/images/boxmine/usvg/group.svg" type="image/svg+xml">
+					<span>Group</span>
+				</object>	
+
+				<object id="ungroupButton" name="ungroupButton" class="menuButton" data="/images/boxmine/usvg/ungroup.svg" type="image/svg+xml">
+					<span>Ungroup</span>
+				</object>	
+
+				<object id="moveUpButton" name="moveUpButton" class="menuButton" data="/images/boxmine/usvg/move-up.svg" type="image/svg+xml">
+					<span>Move Up</span>
+				</object>	
+
+				<object id="moveDownButton" name="moveDownButton" class="menuButton" data="/images/boxmine/usvg/move-down.svg" type="image/svg+xml">
+					<span>Move Down</span>
+				</object>	
+
+				<object id="moveTopButton" name="moveTopButton" class="menuButton" data="/images/boxmine/usvg/move-top.svg" type="image/svg+xml">
+					<span>Move Top</span>
+				</object>	
+
+				<object id="moveBottomButton" name="moveBottomButton" class="menuButton" data="/images/boxmine/usvg/move-bottom.svg" type="image/svg+xml">
+					<span>Move Bottom</span>
+				</object>	
+
+				<object id="toggleGridButton" name="toggleGridButton" class="menuButton" data="/images/boxmine/usvg/toggle-grid.svg" type="image/svg+xml">
+					<span>Toggle Grid</span>
+				</object>	
+
+				<object id="insertObjectButton" name="insertObjectButton" class="menuButton" data="/images/boxmine/usvg/insert-object.svg" type="image/svg+xml">
+					<span>Insert Object</span>
+				</object>	
+
+				<object id="logoutButton" name="logoutButton" class="menuButton" data="/images/boxmine/usvg/logout.svg" type="image/svg+xml">
+					<span>Logout</span>
+				</object>	
 			</div>
-
+	
 		{{else}}
+
+			<div id="menu">			
+				<object id="loginButton" name="registerButton" class="menuButton" data="/images/boxmine/usvg/login.svg" type="image/svg+xml">
+					<span>Login</span>
+				</object>	
+				<object id="registerButton" name="registerButton" class="menuButton" data="/images/boxmine/usvg/register.svg" type="image/svg+xml">
+					<span>Register</span>
+				</object>	
+			</div>
 
 			<div class="icon-bar five-up">
 				<a id="login-button" data-reveal-id="login-lightbox" class="item">
@@ -235,7 +245,7 @@
 				<div id="paper" class="show-grid"></div>
 			</div>
 
-			<object id="zoompanel" name="zoompanel" data="/images/boxmine/zoom-panel.svg" type="image/svg+xml" width="75" height="75"></object>	
+			<object id="zoompanel" name="zoompanel" data="/images/boxmine/usvg/zoom-panel.svg" type="image/svg+xml" width="75" height="75"></object>	
 			<!--
 			<div id="window-container">
 				{{{saveDocumentWindow_html}}}

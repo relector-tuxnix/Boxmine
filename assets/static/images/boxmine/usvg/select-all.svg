@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="button.css"?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="canvas"
+   onload="init()"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="select-all.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1576"
+     id="namedview43"
+     showgrid="true"
+     inkscape:snap-bbox="false"
+     inkscape:zoom="13.906434"
+     inkscape:cx="57.398442"
+     inkscape:cy="14.542855"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="canvas">
+    <inkscape:grid
+       id="grid3024"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata47">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs45" />
+  <script
+     xlink:href="./button.js"
+     id="button-js" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M21.0 19.0C21.0 19.987 19.987 21.0 18.75 21.0L14.25 21.0C13.012 21.0 12.0 19.987 12.0 18.75L12.0 14.25C12.0 13.013 13.012 12.0 14.25 12.0L18.75 12.0C19.987 12.0 21.0 13.013 21.0 14.25L21.0 19.0Z"
+     id="path5"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M36.0 19.0C36.0 19.987 34.987 21.0 33.75 21.0L29.25 21.0C28.013 21.0 27.0 19.987 27.0 18.75L27.0 14.25C27.0 13.013 28.013 12.0 29.25 12.0L33.75 12.0C34.987 12.0 36.0 13.013 36.0 14.25L36.0 19.0Z"
+     id="path7"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M21.0 34.0C21.0 34.987 19.987 36.0 18.75 36.0L14.25 36.0C13.012 36.0 12.0 34.987 12.0 33.75L12.0 29.25C12.0 28.013 13.012 27.0 14.25 27.0L18.75 27.0C19.987 27.0 21.0 28.013 21.0 29.25L21.0 34.0Z"
+     id="path9"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M36.0 34.0C36.0 34.987 34.987 36.0 33.75 36.0L29.25 36.0C28.013 36.0 27.0 34.987 27.0 33.75L27.0 29.25C27.0 28.013 28.013 27.0 29.25 27.0L33.75 27.0C34.987 27.0 36.0 28.013 36.0 29.25L36.0 34.0Z"
+     id="path11"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M3.0 33.0L6.0 33.0L6.0 39.0L3.0 39.0L3.0 33.0Z"
+     id="path15"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M3.0 24.0L6.0 24.0L6.0 30.0L3.0 30.0L3.0 24.0Z"
+     id="path17"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M42.0 18.0L45.0 18.0L45.0 24.0L42.0 24.0L42.0 18.0Z"
+     id="path19"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M42.0 36.0L45.0 36.0L45.0 42.0L42.0 42.0L42.0 36.0Z"
+     id="path21"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M42.0 27.0L45.0 27.0L45.0 33.0L42.0 33.0L42.0 27.0Z"
+     id="path23"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M3.0 15.0L6.0 15.0L6.0 21.0L3.0 21.0L3.0 15.0Z"
+     id="path25"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M3.0 6.0L6.0 6.0L6.0 12.0L3.0 12.0L3.0 6.0Z"
+     id="path27"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M27.0 3.0L33.0 3.0L33.0 6.0L27.0 6.0L27.0 3.0Z"
+     id="path29"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M18.0 3.0L24.0 3.0L24.0 6.0L18.0 6.0L18.0 3.0Z"
+     id="path31"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M9.0 3.0L15.0 3.0L15.0 6.0L9.0 6.0L9.0 3.0Z"
+     id="path33"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M24.0 42.0L30.0 42.0L30.0 45.0L24.0 45.0L24.0 42.0Z"
+     id="path35"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M33.0 42.0L39.0 42.0L39.0 45.0L33.0 45.0L33.0 42.0Z"
+     id="path37"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M15.0 42.0L21.0 42.0L21.0 45.0L15.0 45.0L15.0 42.0Z"
+     id="path39"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M6.0 42.0L12.0 42.0L12.0 45.0L6.0 45.0L6.0 42.0Z"
+     id="path41"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     d="M42.0 9.0L45.0 9.0L45.0 15.0L42.0 15.0L42.0 9.0Z"
+     id="path27-3"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+  <path
+     transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+     sodipodi:nodetypes="ccccc"
+     d="M36.0 3.0L41.0 3.0L41.0 6.0L36.0 6.0Z"
+     id="path29-0"
+     inkscape:connector-curvature="0"
+     style="fill:#000000" />
+</svg>

@@ -199,8 +199,12 @@ $(document).ready(function() {
 
  $(window).load(function () {	
 
-	blah.mouseupCallback = function() {
+	newDocumentButton.mouseupCallback = function() {
 		console.log("YOU CLICKED ME");
+	};
+
+	logoutButton.mouseupCallback = function() {
+		window.location.replace("/logout");
 	};
 
 	zoompanel.inMouseupCallback = function() {

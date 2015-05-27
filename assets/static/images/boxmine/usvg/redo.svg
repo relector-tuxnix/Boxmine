@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="button.css"?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="canvas"
+   onload="init()"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="redo.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1576"
+     id="namedview7"
+     showgrid="false"
+     inkscape:zoom="13.906433"
+     inkscape:cx="25.209674"
+     inkscape:cy="16.955514"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="canvas" />
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9" />
+  <script
+     xlink:href="./button.js"
+     id="button-js" />
+  <g
+     transform="matrix(-0.955057,0.000000,0.000000,0.955057,47.000000,1.000000)"
+     class="button"
+     id="g3105">
+    <path
+       style="fill:#000000"
+       inkscape:connector-curvature="0"
+       id="path5"
+       d="M36.6470273502 48.1646645174C41.470563717 38.4735326145 42.3903557274 23.6919977626 20.9411584858 24.1846817577L20.9411584858 36.1234976381L3.14117377287 18.061748819L20.9411584858 0.0L20.9411584858 11.681937883C47.2625414697 11.0256938895 50.124346502 33.8928716604 36.6470273502 48.1646645174Z"
+       transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)" />
+  </g>
+</svg>

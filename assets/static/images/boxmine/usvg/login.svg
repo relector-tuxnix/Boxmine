@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="button.css"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48" id="canvas" onload="init()">
+
+	<script xlink:href="button.js" id="button-js"/>
+
+	<g id="button">
+		<path fill="#000000" d="M18 24h-15v-6h15v-6l9 9-9 9zM48 0v39l-18 9v-9h-18v-12h3v9h15v-27l12-6h-27v12h-3v-15z"></path>
+	</g>
+</svg>
