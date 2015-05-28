@@ -1,55 +1,64 @@
 $(document).ready(function() {
 	
-	$("#insert-object-button").click(function() {
+	$(window).load(function() {
 
-		console.log("Loaded Insert Object Window.");
+		insertObjectCloseButton.mouseupCallback = function() {
+			$(window.boxmine.activeWindow).hide();
+		};
 
-		$('#insert-object-window').show();
+		insertObjectButton.mouseupCallback = function() {
 
-		$(".object-item").on("mousedown", function(e) {
+			console.log("Loaded Insert Object Window.");
 
-			var item = $(e.target).clone();
+			window.boxmine.activeWindow = $('#insert-object-window');
 
-			$(e.target).parent().append(item);
+			$('#insert-object-window').show();
 
-			var offset = $(e.target).offset();
+			$(".object-item").on("mousedown", function(e) {
 
-			$(item).offset(offset);
+				var item = $(e.target).clone();
 
-			window.boxmine.dragging = $(item);
+				$(e.target).parent().append(item);
 
-			$(item).css('position', 'fixed');
+				var offset = $(e.target).offset();
 
-			return false;
-		});
+				$(item).offset(offset);
 
-		$('body').on("mouseup", function (e) {
+				window.boxmine.dragging = $(item);
 
-			if(window.boxmine.dragging != null) {
+				$(item).css('position', 'fixed');
 
-				var objectSrc = $(window.boxmine.dragging).attr('data-name');
+				return false;
+			});
 
-				window.boxmine.registerObject(objectSrc, function() {
+			$('body').on("mouseup", function (e) {
 
-					window.boxmine.addToPaper(objectSrc);
-				});
+				if(window.boxmine.dragging != null) {
 
-				$(window.boxmine.dragging).remove();
+					var objectSrc = $(window.boxmine.dragging).attr('data-name');
 
-				window.boxmine.dragging = null;
-			}
-		});
+					window.boxmine.registerObject(objectSrc, function() {
 
-		$('body').on("mousemove", function(e) {
-			if(window.boxmine.dragging) {
+						window.boxmine.addToPaper(objectSrc);
+					});
 
-				window.boxmine.dragging.offset({
-					top: e.pageY - 50,
-					left: e.pageX - 50
-				});
-			}
-		});
+					$(window.boxmine.dragging).remove();
 
+					window.boxmine.dragging = null;
+				}
+			});
+
+			$('body').on("mousemove", function(e) {
+				if(window.boxmine.dragging) {
+
+					window.boxmine.dragging.offset({
+						top: e.pageY - 50,
+						left: e.pageX - 50
+					});
+				}
+			});
+
+		};
 
 /*
 

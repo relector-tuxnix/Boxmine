@@ -17,6 +17,7 @@ $(document).ready(function() {
 	
 	window.boxmine = {};
 	window.boxmine.selected = Array();
+	window.boxmine.dragging = null;
 	window.boxmine.activeWindow = null;
 
 	window.boxmine.registerObject = function(name, callback) {
@@ -197,49 +198,169 @@ $(document).ready(function() {
 	
 	window.boxmine.graph.addCell(text);
 
- $(window).load(function () {	
+	$(window).load(function () {	
 
-	newDocumentButton.mouseupCallback = function() {
-		console.log("YOU CLICKED ME");
-	};
+		newDocumentButton.mouseupCallback = function() {
+			console.log("YOU CLICKED ME");
+		};
 
-	logoutButton.mouseupCallback = function() {
-		window.location.replace("/logout");
-	};
+		logoutButton.mouseupCallback = function() {
+			window.location.replace("/logout");
+		};
 
-	zoompanel.inMouseupCallback = function() {
-		window.boxmine.paper.options.width += 50;
-		window.boxmine.paper.options.height += 50;
+		toggleGridButton.mouseupCallback = function() {
 		
-		window.boxmine.paper.setDimensions(window.boxmine.paper.options.width, window.boxmine.paper.options.height);
-		window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
-		
-		$("#paper").width(window.boxmine.paper.options.width);
-		$("#paper").height(window.boxmine.paper.options.height);
-	};
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			if($("#paper").hasClass("show-grid") == true) {
 
-	zoompanel.resetMouseupCallback = function() {	
-		window.boxmine.paper.options.width = 1000;
-		window.boxmine.paper.options.height = 1000;
+				$("#paper").removeClass("show-grid");
+				
+				$("#paper").addClass("hide-grid");
+				
+			} else {
+
+				$("#paper").removeClass("hide-grid");
+				
+				$("#paper").addClass("show-grid");
+			}
+		};
+
+		zoompanel.inMouseupCallback = function() {
+			window.boxmine.paper.options.width += 50;
+			window.boxmine.paper.options.height += 50;
+			
+			window.boxmine.paper.setDimensions(window.boxmine.paper.options.width, window.boxmine.paper.options.height);
+			window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+			
+			$("#paper").width(window.boxmine.paper.options.width);
+			$("#paper").height(window.boxmine.paper.options.height);
+		};
+
+		zoompanel.resetMouseupCallback = function() {	
+			window.boxmine.paper.options.width = 1000;
+			window.boxmine.paper.options.height = 1000;
+			
+			window.boxmine.paper.setDimensions(window.boxmine.paper.options.width, window.boxmine.paper.options.height);
+			window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+			
+			$("#paper").width(window.boxmine.paper.options.width);
+			$("#paper").height(window.boxmine.paper.options.height);
+		};
 		
-		window.boxmine.paper.setDimensions(window.boxmine.paper.options.width, window.boxmine.paper.options.height);
-		window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+		zoompanel.outMouseupCallback = function() {	
+			window.boxmine.paper.options.width -= 50;
+			window.boxmine.paper.options.height -= 50;
+			
+			window.boxmine.paper.setDimensions(window.boxmine.paper.options.width, window.boxmine.paper.options.height);
+			window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+			
+			$("#paper").width(window.boxmine.paper.options.width);
+			$("#paper").height(window.boxmine.paper.options.height);
+		};
+
+		moveUpButton.mouseupCallback = function() {
+			
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			if(window.boxmine.selected.length == 1) {
+				
+				var selected = window.boxmine.selected[0];
 		
-		$("#paper").width(window.boxmine.paper.options.width);
-		$("#paper").height(window.boxmine.paper.options.height);
-	};
-	
-	zoompanel.outMouseupCallback = function() {	
-		window.boxmine.paper.options.width -= 50;
-		window.boxmine.paper.options.height -= 50;
+				console.log(selected);
+				
+				selected.model.moveUp();
+			}
+		};
 		
-		window.boxmine.paper.setDimensions(window.boxmine.paper.options.width, window.boxmine.paper.options.height);
-		window.boxmine.paper.scale(window.boxmine.paper.options.width / 1000, window.boxmine.paper.options.height / 1000);
+		moveDownButton.mouseupCallback = function() {
+			
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			if(window.boxmine.selected.length == 1) {
+				
+				var selected = window.boxmine.selected[0];
 		
-		$("#paper").width(window.boxmine.paper.options.width);
-		$("#paper").height(window.boxmine.paper.options.height);
-	};
-});
+				console.log(selected);
+				
+				selected.model.moveDown();
+			}
+		};
+		
+		moveTopButton.mouseupCallback = function() {
+			
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			if(window.boxmine.selected.length == 1) {
+				
+				var selected = window.boxmine.selected[0];
+		
+				console.log(selected);
+				
+				selected.model.toFront();
+			}
+		};
+		
+		moveBottomButton.mouseupCallback = function() {
+			
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			if(window.boxmine.selected.length == 1) {
+				
+				var selected = window.boxmine.selected[0];
+		
+				console.log(selected);
+				
+				selected.model.toBack();
+			}
+		};
+		
+		deleteButton.mouseupCallback = function() {
+		
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			window.boxmine.deleteSelected();
+		};
+		
+		selectAllButton.mouseupCallback = function() {
+		
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			window.boxmine.selectAll();
+		};
+		
+		groupButton.mouseupCallback = function() {
+		
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			window.boxmine.groupSelected();
+		};
+		
+		ungroupButton.mouseupCallback = function() {
+		
+			if(window.boxmine.activeWindow != null) {
+				return;
+			}
+			
+			window.boxmine.ungroupSelected();
+		};
+	});
 	
 	/*
 	window.boxmine.graph.on('all', function(eventName, cell)
@@ -283,156 +404,38 @@ $(document).ready(function() {
 		}
 	});
 		
-	$("#attributes-button").bind("click", function() {
+	//Allow default-window divs to be moved around as windows
+	$('.default-window').each(function(i) {
 		
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		if(window.boxmine.selected.length == 1) {
-			
-			var type = window.boxmine.selected[0].model.defaults.type;
-			
-			console.log(type);
-			
-			if(type == "basic.Rect") {
-				
-				window.boxmine.activeWindow = $("#object_attributes_window");
-				
-				window.boxmine.activeWindow.data("kendoWindow").open();
-				
-			} else if(type == "basic.Image") {
-			
-				window.boxmine.activeWindow = $("#image_attributes_window");
-				
-				window.boxmine.activeWindow.data("kendoWindow").open();
-			
-			} else if(type =="basic.Text") {
-			
-				window.boxmine.activeWindow = $("#text_attributes_window");
-				
-				window.boxmine.activeWindow.data("kendoWindow").open();
-			}
-		}
-	});
-	
-	$("#toggle-grid-button").bind("click", function() {
-	
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		if($("#paper").hasClass("show-grid") == true) {
+		var win = this;
 
-			$("#paper").removeClass("show-grid");
-			
-			$("#paper").addClass("hide-grid");
-			
-		} else {
+		// …find the title bar inside it and do something onmousedown
+		$(win).find('.default-window-title').on('mousedown', function(evt) {
 
-			$("#paper").removeClass("hide-grid");
-			
-			$("#paper").addClass("show-grid");
-		}
-	});
-	
-	$("#move-up-button").bind("click", function() {
-		
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		if(window.boxmine.selected.length == 1) {
-			
-			var selected = window.boxmine.selected[0];
-	
-			console.log(selected);
-			
-			selected.model.moveUp();
-		}
-	});
-	
-	$("#move-down-button").bind("click", function() {
-		
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		if(window.boxmine.selected.length == 1) {
-			
-			var selected = window.boxmine.selected[0];
-	
-			console.log(selected);
-			
-			selected.model.moveDown();
-		}
-	});
-	
-	$("#move-top-button").bind("click", function() {
-		
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		if(window.boxmine.selected.length == 1) {
-			
-			var selected = window.boxmine.selected[0];
-	
-			console.log(selected);
-			
-			selected.model.toFront();
-		}
-	});
-	
-	$("#move-bottom-button").bind("click", function() {
-		
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		if(window.boxmine.selected.length == 1) {
-			
-			var selected = window.boxmine.selected[0];
-	
-			console.log(selected);
-			
-			selected.model.toBack();
-		}
-	});
-	
-	$("#delete-button").bind("click", function() {
-	
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		window.boxmine.deleteSelected();
-	});
-	
-	$("#select-all-button").bind("click", function() {
-	
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		window.boxmine.selectAll();
-	});
-	
-	$("#group-button").bind("click", function() {
-	
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		window.boxmine.groupSelected();
-	});
-	
-	$("#ungroup-button").bind("click", function() {
-	
-		if(window.boxmine.activeWindow != null) {
-			return;
-		}
-		
-		window.boxmine.ungroupSelected();
+			// Record where the window started
+			var real = $(win).offset();
+			var winX = real.left;
+			var winY = real.top;
+
+			// Record where the mouse started
+			var mX = evt.clientX;
+			var mY = evt.clientY;
+
+			// When moving anywhere on the page, drag the window …until the mouse button comes up
+			$(document).bind('mousemove', drag);
+
+			$(document).bind('mouseup', function() {
+				$(document).unbind('mousemove', drag);
+			});
+
+			// Every time the mouse moves, we do the following 
+			function drag(evt) {
+				// Add difference between where the mouse is now versus where it was last to the original positions
+				$(win).offset({
+					left: winX + evt.clientX - mX,
+					top: winY + evt.clientY - mY
+				});
+			};
+		});
 	});
 });

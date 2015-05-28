@@ -1,64 +1,45 @@
 $(document).ready(function() {
 
-	/*
-	$("#object_attributes_window").load("./objectAttributesWindow.html", function() {
-	
-		console.log("Loaded Object Attributes Window.");
-		
-		var windowFrame = $("#object_attributes_window");
-		
-		var opacitySlider = $("#opacity");
-		var fillStartColour = $("#fill_start_colour");
-		var okButton = $("#oaw_ok_button");
-		var cancelButton = $("#oaw_cancel_button");
+	$(window).load(function() {
 
-		okButton.bind("click", function() {
-			window.boxmine.activeWindow = null;
-			windowFrame.data("kendoWindow").close();
+		objectAttributesButton.mouseupCallback = function() {
 			
-			window.boxmine.deselectAll();	
-		});
-		
-		cancelButton.bind("click", function() {
-			window.boxmine.activeWindow = null;
-			windowFrame.data("kendoWindow").close();
-		});
-		
-		if(windowFrame.data("kendoWindow") == undefined) {
-			windowFrame.kendoWindow({
-				width: "600px",
-				title: "Object Attributes",
-				actions: []
-			});
-			
-			opacitySlider.kendoSlider({
-				increaseButtonTitle: "Right",
-				decreaseButtonTitle: "Left",
-				min: -10,
-				max: 10,
-				smallStep: 2,
-				largeStep: 1,
-				showButtons: false
-			}).data("kendoSlider");
-			
-			opacitySlider.kendoSlider({
-				increaseButtonTitle: "Right",
-				decreaseButtonTitle: "Left",
-				min: -10,
-				max: 10,
-				smallStep: 2,
-				largeStep: 1,
-				showButtons: false
-			}).data("kendoSlider");
-			
-			fillStartColour.kendoColorPicker({
-				value: "#ffffff",
-				buttons: false
-			});
-			
-			windowFrame.data("kendoWindow").close();
-			windowFrame.data("kendoWindow").center();
-		}		
-	});	
-	*/
+			if(window.boxmine.selected.length == 1) {
+				
+				var type = window.boxmine.selected[0].model.defaults.type;
+				
+				console.log(type);
+
+				window.boxmine.activeWindow = $('#object-attributes-window');
+
+				$('#object-attributes-window').show();
+					
+				/*
+				if(type == "basic.Rect") {
+					
+					window.boxmine.activeWindow = $("#object_attributes_window");
+					
+					window.boxmine.activeWindow.data("kendoWindow").open();
+					
+				} else if(type == "basic.Image") {
+				
+					window.boxmine.activeWindow = $("#image_attributes_window");
+					
+					window.boxmine.activeWindow.data("kendoWindow").open();
+				
+				} else if(type =="basic.Text") {
+				
+					window.boxmine.activeWindow = $("#text_attributes_window");
+					
+					window.boxmine.activeWindow.data("kendoWindow").open();
+				}
+				*/
+			}
+		};
+	
+		attributesCloseButton.mouseupCallback = function() {
+			$(window.boxmine.activeWindow).hide();
+		};
+
+	});
 });

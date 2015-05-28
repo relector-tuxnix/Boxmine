@@ -113,7 +113,32 @@ body {
 
 	.default-window {
 		display: none;
+		position: fixed;
+		top: 100px;
+		left: 85%;
+		display: none;
+		background: #fff none repeat scroll 0 0;
+		box-shadow: 0 4px 11px rgba(0, 0, 0, 0.3);	
+		border: 1px solid #d7d7d7;
+		border-radius: 2px;
+	    	overflow-x: hidden;
+		width: 300px;
+	    	overflow-y: auto;
+		padding: 15px;
+		max-height: 600px;
 	}
+
+		.default-window-title {
+			text-align: right;
+			width: 100%;
+			height: 20px;
+			border: 1px solid black;
+		}
+
+			.close-window {
+				width: 16px;
+				height: 16px;
+			}
 
 
 #insert-object-window {

@@ -37,7 +37,7 @@ $.home = {
 	views: [
 		{'saveDocumentWindow_js' : 'boxmine/saveDocumentWindow.js'},
 		{'saveDocumentWindow_html' : 'boxmine/saveDocumentWindow.html'},
-		{'objectAttributestWindow_js' : 'boxmine/objectAttributesWindow.js'},
+		{'objectAttributesWindow_js' : 'boxmine/objectAttributesWindow.js'},
 		{'objectAttributesWindow_html' : 'boxmine/objectAttributesWindow.html'},
 		{'openDocumentWindow_js' : 'boxmine/openDocumentWindow.js'},
 		{'openDocumentWindow_html' : 'boxmine/openDocumentWindow.html'},
