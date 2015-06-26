@@ -10,8 +10,6 @@ $(document).ready(function() {
 				
 				console.log(type);
 
-				window.boxmine.activeWindow = $('#object-attributes-window');
-
 				$('#object-attributes-window').show();
 					
 				/*
@@ -38,7 +36,9 @@ $(document).ready(function() {
 		};
 	
 		attributesCloseButton.mouseupCallback = function() {
-			$(window.boxmine.activeWindow).hide();
+			console.log("Close Object Attributes Window");
+
+			$('#object-attributes-window').hide();
 		};
 
 	});

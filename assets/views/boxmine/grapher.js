@@ -1,5 +1,29 @@
 $(document).ready(function() {
+
+	// I translate the coordiantes from a global context to a local context.
+	$.globalToLocal = function( context, globalX, globalY ) {
+		// Get the position of the context element.
+		var position = context.offset();
 	
+		// Return the X/Y in the local context.
+		return({
+			x: Math.floor( globalX - position.left ),
+			y: Math.floor( globalY - position.top )
+		});
+	};
+
+	// I translate the coordinates from a local context to a global context.
+	$.localToGlobal = function( context, localX, localY ) {
+		// Get the position of the context element.
+		var position = context.offset();
+
+		// Return the X/Y in the local context.
+		return({
+			x: Math.floor( localX + position.left ),
+			y: Math.floor( localY + position.top )
+		});
+	};
+
 	//Prevent dragging of svg elements
 	$(document).bind("mousedown",function(e){
 		return false;
@@ -17,8 +41,6 @@ $(document).ready(function() {
 	
 	window.boxmine = {};
 	window.boxmine.selected = Array();
-	window.boxmine.dragging = null;
-	window.boxmine.activeWindow = null;
 
 	window.boxmine.registerObject = function(name, callback) {
 
@@ -57,10 +79,10 @@ $(document).ready(function() {
 		},  'text');
 	};
 
-	window.boxmine.addToPaper = function(name) {
+	window.boxmine.addToPaper = function(name, x, y) {
 
 		var rect = new joint.shapes.basic[name]({
-			position: { x: 0, y: 0 },
+			position: { x: x, y: y },
 			size: { width: 100, height: 100 },
 			attrs: {
 				'.class-ying': { fill: 'black' },
@@ -68,8 +90,10 @@ $(document).ready(function() {
 			}
 		});
 
-		console.log(rect.markup);
-	
+		console.log("ADDING");	
+
+		console.log(window.boxmine.graph);
+
 		window.boxmine.graph.addCell(rect);
 	};
 
@@ -414,12 +438,12 @@ $(document).ready(function() {
 
 			// Record where the window started
 			var real = $(win).offset();
-			var winX = real.left;
-			var winY = real.top;
+			var itemTLX = real.left;
+			var itemTLY = real.top;
 
 			// Record where the mouse started
-			var mX = evt.clientX;
-			var mY = evt.clientY;
+			var firstMX = evt.clientX;
+			var firstMY = evt.clientY;
 
 			// When moving anywhere on the page, drag the window …until the mouse button comes up
 			$(document).bind('mousemove', drag);
@@ -432,8 +456,8 @@ $(document).ready(function() {
 			function drag(evt) {
 				// Add difference between where the mouse is now versus where it was last to the original positions
 				$(win).offset({
-					left: winX + evt.clientX - mX,
-					top: winY + evt.clientY - mY
+					left: itemTLX + evt.clientX - firstMX,
+					top: itemTLY + evt.clientY - firstMY
 				});
 			};
 		});

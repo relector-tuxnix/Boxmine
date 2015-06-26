@@ -132,7 +132,6 @@ body {
 			text-align: right;
 			width: 100%;
 			height: 20px;
-			border: 1px solid black;
 		}
 
 			.close-window {
@@ -147,23 +146,16 @@ body {
 
 	.object-item {
 		display: inline-block;
-		margin-left: 10px;
-		margin-top: 10px;
 		vertical-align: top;
+		margin: 15px;
+		width: 100px;
+		height: 100px;
+		display: block;
+		border: 1px solid black;
+		text-decoration: none;
+		border: 0;
+		display: inline-block;
 	}
-
-		.object-item img {
-			width: 100px;
-			height: 100px;
-			display: block;
-			border: 1px solid black;
-			margin: 5px;
-			padding: 5px;
-			text-decoration: none;
-			border: 0;
-			margin: auto;
-			display: inline-block;
-		}
 
 #zoompanel {
 	position: fixed;

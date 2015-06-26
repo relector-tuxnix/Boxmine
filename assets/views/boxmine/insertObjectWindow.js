@@ -3,123 +3,105 @@ $(document).ready(function() {
 	$(window).load(function() {
 
 		insertObjectCloseButton.mouseupCallback = function() {
-			$(window.boxmine.activeWindow).hide();
+			console.log("Close Insert Object Window");
+
+			$('#insert-object-window').hide();
 		};
 
 		insertObjectButton.mouseupCallback = function() {
 
 			console.log("Loaded Insert Object Window.");
 
-			window.boxmine.activeWindow = $('#insert-object-window');
-
 			$('#insert-object-window').show();
 
-			$(".object-item").on("mousedown", function(e) {
+			var lastMX;
+			var lastMY;
+			var itemTLX;
+			var itemTLY;
+			var firstMX;
+			var firstMY;
+			var paperTLX;
+			var paperTLY;
 
-				var item = $(e.target).clone();
+			$('.object-item').on('mousedown', function(evt) {
 
-				$(e.target).parent().append(item);
+				console.log("HERE");
 
-				var offset = $(e.target).offset();
+				// Paper offset from top left
+				var realPaper = $('#paper').offset();
+				paperTLX = realPaper.left;
+				paperTLY = realPaper.top;
 
-				$(item).offset(offset);
+				// Record where the object started, coordinated is from the top left
+				var real = $(evt.target).offset();
+				itemTLX = real.left;
+				itemTLY = real.top;
 
-				window.boxmine.dragging = $(item);
+				// Record where the mouse started
+				firstMX = evt.clientX;
+				firstMY = evt.clientY;
+				lastMX = 0;
+				lastMY = 0;
+
+				var item = $(evt.target).clone();
+
+				$('body').append(item);
+
+				$(item).unbind();
+
+				$(item).offset({left: itemTLX, top: itemTLY});
 
 				$(item).css('position', 'fixed');
 
-				return false;
-			});
+				// When moving anywhere on the page, drag the window …until the mouse button comes up
+				$(document).bind('mousemove', drag);
 
-			$('body').on("mouseup", function (e) {
+				$(document).bind('mouseup', function() {
 
-				if(window.boxmine.dragging != null) {
+					$(document).unbind('mousemove', drag);
 
-					var objectSrc = $(window.boxmine.dragging).attr('data-name');
+					if(item != null) {
 
-					window.boxmine.registerObject(objectSrc, function() {
+						var objectSrc = $(item).attr('data-name');
 
-						window.boxmine.addToPaper(objectSrc);
+						window.boxmine.registerObject(objectSrc, function() {
+
+							console.log("B: " + lastMX + ", " + lastMY);
+
+							window.boxmine.addToPaper(objectSrc, itemTLX + lastMX - firstMX - paperTLX, itemTLY + lastMY - firstMY - paperTLY);
+						});
+
+						$(item).remove();
+					}
+				});
+
+				// Every time the mouse moves, we do the following 
+				function drag(evt) {
+					lastMX = evt.clientX;
+					lastMY = evt.clientY;
+
+					// Add difference between where the mouse is now versus where it was last to the original positions
+					$(item).offset({
+						left: itemTLX + lastMX - firstMX,
+						top: itemTLY + lastMY - firstMY
 					});
-
-					$(window.boxmine.dragging).remove();
-
-					window.boxmine.dragging = null;
-				}
+				};
 			});
-
-			$('body').on("mousemove", function(e) {
-				if(window.boxmine.dragging) {
-
-					window.boxmine.dragging.offset({
-						top: e.pageY - 50,
-						left: e.pageX - 50
-					});
-				}
-			});
-
 		};
 
-/*
-
-		var windowFrame = $("#insert_object_window");
-		var navigationButton = $("#insert_object");
-		
-		var tabStrip = $("#tab_strip")
-		var fillStartColour = $("#fill_start_colour");
-		var okButton = $("#iow_ok_button");
-		var cancelButton = $("#iow_cancel_button");
-
-		navigationButton.bind("click", function() {
-			if(window.boxmine.activeWindow != null) {
-				return;
+		/*
+		//Adding images	
+		var ib = new joint.shapes.basic.Image({
+			position: { x: 450, y: 50 },
+			size: { width: 40, height: 40 },
+			attrs: {
+				image: { 'xlink:href': 'http://upload.wikimedia.org/wikipedia/commons/a/a0/Circle_-_black_simple.svg', width: 48, height: 48 }
 			}
+		});
 
-			window.boxmine.activeWindow = windowFrame;
-			windowFrame.data("kendoWindow").open();
-		});
+		console.log(ib);
 		
-		okButton.bind("click", function() {
-			
-			var ib = new joint.shapes.basic.Image({
-				position: { x: 450, y: 50 },
-				size: { width: 40, height: 40 },
-				attrs: {
-					image: { 'xlink:href': 'http://upload.wikimedia.org/wikipedia/commons/a/a0/Circle_-_black_simple.svg', width: 48, height: 48 }
-				}
-			});
-	
-			console.log(ib);
-			
-			window.boxmine.graph.addCell(ib);
-	
-			window.boxmine.activeWindow = null;
-			windowFrame.data("kendoWindow").close();
-		});
-		
-		cancelButton.bind("click", function() {
-			window.boxmine.activeWindow = null;
-			windowFrame.data("kendoWindow").close();
-		});
-		
-		if(windowFrame.data("kendoWindow") == undefined) {
-			windowFrame.kendoWindow({
-				width: "600px",
-				title: "Insert Object",
-				actions: []
-			});
-			
-			tabStrip.kendoTabStrip({
-				animation:  {
-					open: {
-						effects: "fadeIn"
-					}
-				}
-			});
-			
-			windowFrame.data("kendoWindow").close();
-			windowFrame.data("kendoWindow").center();
-		}	
+		window.boxmine.graph.addCell(ib);
 		*/
 	});	
 });
