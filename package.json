@@ -1,0 +1,25 @@
+{
+  "name": "Boxmine",
+  "version": "1.0.0",
+  "description": "Boxmine =======",
+  "main": "index.js",
+  "dependencies": {
+    "cuid": "^1.2.5",
+    "svgo": "^0.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neonnds/Boxmine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neonnds/Boxmine/issues"
+  },
+  "homepage": "https://github.com/neonnds/Boxmine#readme"
+}
